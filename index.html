@@ -155,6 +155,7 @@
   import { questions } from "./questions.js";
 
   let currentIndex = 0;
+  let restoreQuizProgress = true;
   let history = JSON.parse(localStorage.getItem('aws_quiz_history') || '{}');
 
   function switchTab(tab){
@@ -188,8 +189,16 @@
       return;
     }
 
+    if (restoreQuizProgress) {
+      const savedQuestionId = localStorage.getItem('aws_quiz_current_question');
+      const savedIndex = list.findIndex(q=>String(q.id)===savedQuestionId);
+      if (savedIndex >= 0) currentIndex = savedIndex;
+      restoreQuizProgress = false;
+    }
+
     if(currentIndex >= list.length) currentIndex = 0;
     const q = list[currentIndex];
+    localStorage.setItem('aws_quiz_current_question', String(q.id));
 
     document.getElementById('q-category').innerText = q.category;
     document.getElementById('q-text').innerText = `問${q.id}. ${q.question}`;
@@ -281,6 +290,10 @@
   function selectExamOption(idx, q) {
     const isCorrect = (idx === q.answer);
     if (isCorrect) examCorrect++;
+    if (!isCorrect) {
+      history[q.id] = { category:q.category, isCorrect:false };
+      localStorage.setItem('aws_quiz_history', JSON.stringify(history));
+    }
     examResults.push({
       questionNumber: examIndex + 1,
       question: q.question,
