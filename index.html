@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DVA-C02 模擬問題アプリ</title>
+
+  <style>
+    body { background:#f8fafc; color:#1e293b; padding:16px; max-width:600px; margin:auto; font-family:sans-serif; }
+    header { border-bottom:2px solid #e2e8f0; padding-bottom:12px; margin-bottom:16px; }
+    h1 { font-size:18px; font-weight:bold; }
+    .nav-tabs { display:flex; gap:8px; margin-top:10px; }
+    .tab-btn { flex:1; padding:8px; border:1px solid #cbd5e1; border-radius:8px; background:#fff; font-weight:bold; cursor:pointer; }
+    .tab-btn.active { background:#ea580c; color:#fff; }
+    .card { background:#fff; padding:16px; border-radius:12px; border:1px solid #e2e8f0; }
+    .badge { background:#ffedd5; color:#9a3412; padding:3px 8px; border-radius:12px; font-size:11px; font-weight:bold; }
+    .q-text { font-size:15px; font-weight:bold; margin:16px 0; }
+    .opt-btn { padding:12px; border:1px solid #cbd5e1; border-radius:8px; background:#fff; text-align:left; cursor:pointer; margin-bottom:8px; }
+    .opt-btn.correct { background:#dcfce7; border-color:#22c55e; }
+    .opt-btn.wrong { background:#fee2e2; border-color:#ef4444; }
+    .explanation { margin-top:16px; padding:12px; background:#f1f5f9; border-left:4px solid #ea580c; border-radius:8px; }
+    .next-btn { margin-top:12px; width:100%; padding:10px; background:#0f172a; color:#fff; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
+    .hidden { display:none; }
+    .stats-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+    .stat-box { background:#fff; padding:12px; border-radius:8px; border:1px solid #e2e8f0; text-align:center; }
+    .stat-num { font-size:18px; font-weight:bold; color:#ea580c; }
+    table { width:100%; border-collapse:collapse; margin-top:10px; }
+    th, td { padding:6px; border-bottom:1px solid #e2e8f0; text-align:left; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>DVA-C02 模擬問題マスター</h1>
+  <div class="nav-tabs">
+    <button id="btn-quiz" class="tab-btn active" onclick="switchTab('quiz')">問題演習</button>
+    <button id="btn-exam" class="tab-btn" onclick="switchTab('exam')">模擬試験</button>
+    <button id="btn-stats" class="tab-btn" onclick="switchTab('stats')">弱点分析</button>
+  </div>
+</header>
+
+<!-- 問題演習 -->
+<div id="tab-quiz">
+  <div class="card" style="margin-bottom:16px;">
+    <label>分野:
+      <select id="cat-select" onchange="renderQuestion()">
+        <option value="ALL">全分野</option>
+        <option value="Lambda">Lambda</option>
+        <option value="API Gateway">API Gateway</option>
+        <option value="DynamoDB">DynamoDB</option>
+        <option value="SQS">SQS</option>
+        <option value="Step Functions">Step Functions</option>
+        <option value="EventBridge">EventBridge</option>
+        <option value="IAM">IAM</option>
+        <option value="CloudWatch">CloudWatch</option>
+        <option value="CI/CD">CI/CD</option>
+        <option value="X-Ray">X-Ray</option>
+      </select>
+    </label>
+    <br><br>
+    <label><input type="checkbox" id="chk-incorrect" onchange="renderQuestion()"> 間違えた問題のみ</label>
+  </div>
+
+  <div id="quiz-container" class="card">
+    <span id="q-category" class="badge"></span>
+    <div id="q-text" class="q-text"></div>
+    <div id="q-options"></div>
+
+    <div id="explanation-box" class="explanation hidden">
+      <div id="result-title" style="font-weight:bold;"></div>
+      <div id="explanation-text"></div>
+      <button class="next-btn" onclick="nextQuestion()">次の問題へ →</button>
+    </div>
+  </div>
+</div>
+
+<!-- 模擬試験 -->
+<div id="tab-exam" class="hidden">
+  <div class="card">
+    <h2 style="font-size:16px; margin-bottom:12px;">模擬試験モード（65問）</h2>
+    <button class="next-btn" onclick="startExam()">模擬試験を開始する</button>
+  </div>
+
+  <div id="exam-container" class="card hidden">
+    <span id="exam-category" class="badge"></span>
+    <div id="exam-text" class="q-text"></div>
+    <div id="exam-options"></div>
+
+    <div id="exam-explanation" class="explanation hidden">
+      <div id="exam-result-title" style="font-weight:bold;"></div>
+      <div id="exam-explanation-text"></div>
+      <button class="next-btn" onclick="nextExamQuestion()">次の問題へ →</button>
+    </div>
+  </div>
+
+  <div id="exam-result" class="card hidden">
+    <h2>模擬試験結果</h2>
+    <p id="exam-score" style="font-size:20px; font-weight:bold; margin:12px 0;"></p>
+    <button class="next-btn" onclick="switchTab('quiz')">通常モードに戻る</button>
+  </div>
+</div>
+
+<!-- 弱点分析 -->
+<div id="tab-stats" class="hidden">
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div>総解答数</div>
+      <div id="stat-total" class="stat-num">0</div>
+    </div>
+    <div class="stat-box">
+      <div>正答率</div>
+      <div id="stat-rate" class="stat-num">0%</div>
+    </div>
+    <div class="stat-box">
+      <div>要復習</div>
+      <div id="stat-wrong" class="stat-num" style="color:#ef4444;">0</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:20px;">分野別正答率</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>分野</th>
+        <th>解答数</th>
+        <th>正答数</th>
+        <th>正答率</th>
+      </tr>
+    </thead>
+    <tbody id="stats-category-table"></tbody>
+  </table>
+</div>
+
+<script type="module">
+  import { questions } from "./questions.js";
+
+  let currentIndex = 0;
+  let history = JSON.parse(localStorage.getItem('aws_quiz_history') || '{}');
+
+  function switchTab(tab){
+    document.getElementById('tab-quiz').classList.toggle('hidden', tab!=='quiz');
+    document.getElementById('tab-exam').classList.toggle('hidden', tab!=='exam');
+    document.getElementById('tab-stats').classList.toggle('hidden', tab!=='stats');
+
+    document.getElementById('btn-quiz').classList.toggle('active', tab==='quiz');
+    document.getElementById('btn-exam').classList.toggle('active', tab==='exam');
+    document.getElementById('btn-stats').classList.toggle('active', tab==='stats');
+
+    if(tab==='stats') updateStats();
+  }
+
+  function getFilteredQuestions(){
+    const cat = document.getElementById('cat-select').value;
+    const onlyWrong = document.getElementById('chk-incorrect').checked;
+
+    return questions.filter(q=>{
+      const matchCat = (cat==="ALL" || q.category===cat);
+      const isWrong = history[q.id] && !history[q.id].isCorrect;
+      return matchCat && (!onlyWrong || isWrong);
+    });
+  }
+
+  function renderQuestion(){
+    const list = getFilteredQuestions();
+    if(list.length===0){
+      document.getElementById('quiz-container').innerHTML =
+        '<div style="text-align:center; padding:20px;">対象の問題がありません。</div>';
+      return;
+    }
+
+    if(currentIndex >= list.length) currentIndex = 0;
+    const q = list[currentIndex];
+
+    document.getElementById('q-category').innerText = q.category;
+    document.getElementById('q-text').innerText = `問${q.id}. ${q.question}`;
+
+    const optDiv = document.getElementById('q-options');
+    optDiv.innerHTML = '';
+    document.getElementById('explanation-box').classList.add('hidden');
+
+    q.options.forEach((opt, idx)=>{
+      const btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.innerText = opt;
+      btn.onclick = ()=>selectOption(idx, q);
+      optDiv.appendChild(btn);
+    });
+  }
+
+  function selectOption(idx, q){
+    const isCorrect = (idx===q.answer);
+    history[q.id] = { category:q.category, isCorrect };
+    localStorage.setItem('aws_quiz_history', JSON.stringify(history));
+
+    const btns = document.querySelectorAll('.opt-btn');
+    btns.forEach((btn,i)=>{
+      btn.disabled = true;
+      if(i===q.answer) btn.classList.add('correct');
+      if(i===idx && !isCorrect) btn.classList.add('wrong');
+    });
+
+    document.getElementById('result-title').innerText = isCorrect ? "✔ 正解！" : "✖ 不正解";
+    document.getElementById('result-title').style.color = isCorrect ? "#22c55e" : "#ef4444";
+    document.getElementById('explanation-text').innerText = q.explanation;
+    document.getElementById('explanation-box').classList.remove('hidden');
+  }
+
+  function nextQuestion(){
+    const list = getFilteredQuestions();
+    currentIndex = (currentIndex + 1) % list.length;
+    renderQuestion();
+  }
+
+  /* ▼▼▼ 模擬試験モード ▼▼▼ */
+
+  let examList = [];
+  let examIndex = 0;
+  let examCorrect = 0;
+
+  function startExam() {
+    examList = [...questions].sort(() => Math.random() - 0.5).slice(0, 65);
+    examIndex = 0;
+    examCorrect = 0;
+
+    document.getElementById('exam-container').classList.remove('hidden');
+    document.getElementById('exam-result').classList.add('hidden');
+
+    renderExamQuestion();
+  }
+
+  function renderExamQuestion() {
+    const q = examList[examIndex];
+
+    document.getElementById('exam-category').innerText = q.category;
+    document.getElementById('exam-text').innerText = `問${q.id}. ${q.question}`;
+
+    const optDiv = document.getElementById('exam-options');
+    optDiv.innerHTML = '';
+    document.getElementById('exam-explanation').classList.add('hidden');
+
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'opt-btn';
+      btn.innerText = opt;
+      btn.onclick = () => selectExamOption(idx, q);
+      optDiv.appendChild(btn);
+    });
+  }
+
+  function selectExamOption(idx, q) {
+    const isCorrect = (idx === q.answer);
+    if (isCorrect) examCorrect++;
+
+    const btns = document.querySelectorAll('#exam-options .opt-btn');
+    btns.forEach((btn, i) => {
+      btn.disabled = true;
+      if (i === q.answer) btn.classList.add('correct');
+      if (i === idx && !isCorrect) btn.classList.add('wrong');
+    });
+
+    document.getElementById('exam-result-title').innerText = isCorrect ? "✔ 正解！" : "✖ 不正解";
+    document.getElementById('exam-result-title').style.color = isCorrect ? "#22c55e" : "#ef4444";
+    document.getElementById('exam-explanation-text').innerText = q.explanation;
+    document.getElementById('exam-explanation').classList.remove('hidden');
+  }
+
+  function nextExamQuestion() {
+    examIndex++;
+    if (examIndex >= examList.length) {
+      showExamResult();
+    } else {
+      renderExamQuestion();
+    }
+  }
+
+  function showExamResult() {
+    document.getElementById('exam-container').classList.add('hidden');
+    document.getElementById('exam-result').classList.remove('hidden');
+
+    const score = Math.round((examCorrect / examList.length) * 100);
+    document.getElementById('exam-score').innerText =
+      `正答率: ${score}%（${examCorrect} / ${examList.length}）`;
+  }
+
+  /* ▼▼▼ 分野別正答率 ▼▼▼ */
+
+  function updateCategoryStats() {
+    const categories = {};
+
+    Object.keys(history).forEach(id => {
+      const h = history[id];
+      if (!categories[h.category]) {
+        categories[h.category] = { total: 0, correct: 0 };
+      }
+      categories[h.category].total++;
+      if (h.isCorrect) categories[h.category].correct++;
+    });
+
+    const tbody = document.getElementById('stats-category-table');
+    tbody.innerHTML = '';
+
+    Object.keys(categories).forEach(cat => {
+      const c = categories[cat];
+      const rate = c.total > 0 ? Math.round((c.correct / c.total) * 100) : 0;
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${cat}</td>
+        <td>${c.total}</td>
+        <td>${c.correct}</td>
+        <td>${rate}%</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  }
+
+  function updateStats(){
+    const list = Object.values(history);
+    const total = list.length;
+    const correct = list.filter(i=>i.isCorrect).length;
+    const wrong = total - correct;
+    const rate = total>0 ? Math.round(correct/total*100) : 0;
+
+    document.getElementById('stat-total').innerText = total;
+    document.getElementById('stat-rate').innerText = rate + "%";
+    document.getElementById('stat-wrong').innerText = wrong;
+
+    updateCategoryStats();
+  }
+
+  renderQuestion();
+</script>
+
+</body>
+</html>
