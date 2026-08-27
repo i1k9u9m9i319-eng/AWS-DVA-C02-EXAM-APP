@@ -280,15 +280,17 @@ export const questions = [
   },
 
   {
-    id:15, category:"CloudWatch",
-    question:"API Gatewayの全体的なレイテンシを監視したい。最も適切なメトリクスはどれか？",
-    options:[
+    id: 15,
+    category: "CloudWatch",
+    question:
+      "API Gatewayの全体的なレイテンシを監視したい。最も適切なメトリクスはどれか？",
+    options: [
       "A. Latency",
       "B. IntegrationLatency",
       "C. 4XXError",
       "D. 5XXError"
     ],
-    answer:0,
+    answer: 0,
     explanation:
       "正解はA。\n\n" +
       "A: Latencyは、クライアントから見たAPI Gatewayの全体レイテンシ（受信〜レスポンス送信まで）を表すメトリクス。API全体の応答時間を監視したい場合に最適。\n\n" +
@@ -298,15 +300,17 @@ export const questions = [
   },
 
   {
-    id:16, category:"CloudWatch",
-    question:"API Gatewayのバックエンド統合部分の遅延のみを監視したい。最も適切なメトリクスはどれか？",
-    options:[
+    id: 16,
+    category: "CloudWatch",
+    question:
+      "API Gatewayのバックエンド統合部分の遅延のみを監視したい。最も適切なメトリクスはどれか？",
+    options: [
       "A. Latency",
       "B. IntegrationLatency",
       "C. 4XXError",
       "D. 5XXError"
     ],
-    answer:1,
+    answer: 1,
     explanation:
       "正解はB。\n\n" +
       "A: LatencyはAPI Gateway全体のレイテンシであり、バックエンド統合以外のオーバーヘッドも含む。\n\n" +
@@ -315,15 +319,17 @@ export const questions = [
   },
 
   {
-    id:17, category:"CI/CD",
-    question:"CodePipelineでソース変更→ビルド→デプロイを自動化したい。最も適切な構成はどれか？",
-    options:[
+    id: 17,
+    category: "CI/CD",
+    question:
+      "CodePipelineでソース変更→ビルド→デプロイを自動化したい。最も適切な構成はどれか？",
+    options: [
       "A. CodeBuildのみを使う",
       "B. CodeDeployのみを使う",
       "C. CodePipeline＋CodeBuild＋CodeDeployを組み合わせる",
       "D. CloudFormationのみを使う"
     ],
-    answer:2,
+    answer: 2,
     explanation:
       "正解はC。\n\n" +
       "A: CodeBuildはビルド専用サービスであり、ソース変更検知やデプロイのオーケストレーションは行わない。\n\n" +
@@ -333,9 +339,11 @@ export const questions = [
   },
 
   {
-    id:18, category:"CI/CD",
-    question:"SAMを使ったLambda＋API Gateway構成をCI/CDに組み込みたい。最も適切なビルド・デプロイ方法はどれか？",
-    options:[
+    id: 18,
+    category: "CI/CD",
+    question:
+      "SAMを使ったLambda＋API Gateway構成をCI/CDに組み込みたい。最も適切なビルド・デプロイ方法はどれか？",
+    options: [
       "A. CodeBuildで sam build と sam deploy を実行する",
       "B. Lambdaコンソールから手動でZIPをアップロードする",
       "C. CloudFormationコンソールでテンプレートを手動アップロードする",
@@ -351,9 +359,11 @@ export const questions = [
   },
 
   {
-    id:19, category:"X-Ray",
-    question:"X-Rayで外部HTTP API呼び出しのレイテンシが高いことが判明した。次に行うべきアクションとして最も適切なのはどれか？",
-    options:[
+    id: 19,
+    category: "X-Ray",
+    question:
+      "X-Rayで外部HTTP API呼び出しのレイテンシが高いことが判明した。次に行うべきアクションとして最も適切なのはどれか？",
+    options: [
       "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
       "B. CloudWatch Logsを無効化する",
       "C. IAMロールの権限を減らす",
@@ -369,9 +379,11 @@ export const questions = [
   },
 
   {
-    id:20, category:"X-Ray",
-    question:"X-Rayでトレースが一部しか表示されず、外部HTTP呼び出しがトレースに含まれていない。外部呼び出しもトレースしたい場合、必要な対応はどれか？",
-    options:[
+    id: 20,
+    category: "X-Ray",
+    question:
+      "X-Rayでトレースが一部しか表示されず、外部HTTP呼び出しがトレースに含まれていない。外部呼び出しもトレースしたい場合、必要な対応はどれか？",
+    options: [
       "A. X-Ray SDKを使って外部HTTP呼び出しをインストルメントする",
       "B. CloudWatch Logsの保持期間を延長する",
       "C. IAMロールに xray:* を付与する",
@@ -387,9 +399,11 @@ export const questions = [
   },
 
   {
-    id:21, category:"Lambda",
-    question:"Lambda関数のコールドスタートを減らしたい。最も直接的な対策はどれか？",
-    options:[
+    id: 21,
+    category: "Lambda",
+    question:
+      "Lambda関数のコールドスタートを減らしたい。最も直接的な対策はどれか？",
+    options: [
       "A. プロビジョンドコンカレンシーを設定する",
       "B. メモリを最小にしてコストを削減する",
       "C. タイムアウトを短くする",
@@ -405,9 +419,11 @@ export const questions = [
   },
 
   {
-    id:22, category:"Lambda",
-    question:"Lambda関数が外部APIを呼び出しており、時々タイムアウトする。最も適切な改善策はどれか？",
-    options:[
+    id: 22,
+    category: "Lambda",
+    question:
+      "Lambda関数が外部APIを呼び出しており、時々タイムアウトする。最も適切な改善策はどれか？",
+    options: [
       "A. Lambdaのタイムアウト値を無制限に近い値まで延長する",
       "B. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
       "C. IAMロールの権限を増やす",
@@ -423,9 +439,11 @@ export const questions = [
   },
 
   {
-    id:23, category:"API Gateway",
-    question:"API Gatewayでバックエンドレスポンスをキャッシュして、読み取り負荷を減らしたい。最も適切な機能はどれか？",
-    options:[
+    id: 23,
+    category: "API Gateway",
+    question:
+      "API Gatewayでバックエンドレスポンスをキャッシュして、読み取り負荷を減らしたい。最も適切な機能はどれか？",
+    options: [
       "A. API Gatewayのレスポンスキャッシュ機能",
       "B. CloudFrontのキャッシュのみを使う",
       "C. Lambda内でグローバル変数にキャッシュする",
@@ -441,9 +459,11 @@ export const questions = [
   },
 
   {
-    id:24, category:"DynamoDB",
-    question:"DynamoDBで大量の読み取りが発生しており、コストを抑えたい。最も適切な対策はどれか？",
-    options:[
+    id: 24,
+    category: "DynamoDB",
+    question:
+      "DynamoDBで大量の読み取りが発生しており、コストを抑えたい。最も適切な対策はどれか？",
+    options: [
       "A. DAX（DynamoDB Accelerator）を導入する",
       "B. WCUを減らしてスロットリングを許容する",
       "C. テーブルを複数に分割する",
@@ -459,9 +479,11 @@ export const questions = [
   },
 
   {
-    id:25, category:"SQS",
-    question:"SQS→Lambda連携で、Lambdaの同時実行数が急増し、バックエンドが過負荷になっている。最も適切な対策はどれか？",
-    options:[
+    id: 25,
+    category: "SQS",
+    question:
+      "SQS→Lambda連携で、Lambdaの同時実行数が急増し、バックエンドが過負荷になっている。最も適切な対策はどれか？",
+    options: [
       "A. Lambdaの最大同時実行数を制限する",
       "B. Visibility Timeoutを短くする",
       "C. Delay Secondsを増やす",
@@ -477,9 +499,11 @@ export const questions = [
   },
 
   {
-    id:26, category:"Step Functions",
-    question:"Step Functionsで長時間処理を行うワークフローを設計している。Lambdaの使用を最小限にしてコストを抑えたい。最も適切な方針はどれか？",
-    options:[
+    id: 26,
+    category: "Step Functions",
+    question:
+      "Step Functionsで長時間処理を行うワークフローを設計している。Lambdaの使用を最小限にしてコストを抑えたい。最も適切な方針はどれか？",
+    options: [
       "A. サービス統合（AWS SDK統合）を使い、可能な限りLambdaを使わない",
       "B. すべての処理をLambdaで実装する",
       "C. CloudWatch Logsを無効化してログコストを削減する",
@@ -495,9 +519,11 @@ export const questions = [
   },
 
   {
-    id:27, category:"EventBridge",
-    question:"EventBridgeでcron式を使って毎日Lambdaを起動したい。最も適切な設定はどれか？",
-    options:[
+    id: 27,
+    category: "EventBridge",
+    question:
+      "EventBridgeでcron式を使って毎日Lambdaを起動したい。最も適切な設定はどれか？",
+    options: [
       "A. EventBridgeルールで cron 式を指定し、ターゲットにLambdaを設定する",
       "B. CloudWatch Logsでスケジュールを設定する",
       "C. SQSキューにメッセージを送ってLambdaをトリガーする",
@@ -513,9 +539,11 @@ export const questions = [
   },
 
   {
-    id:28, category:"SQS",
-    question:"SQS標準キューで、メッセージが時々重複して処理されている。ビジネスロジック上、重複処理は許容できない。最も適切な対策はどれか？",
-    options:[
+    id: 28,
+    category: "SQS",
+    question:
+      "SQS標準キューで、メッセージが時々重複して処理されている。ビジネスロジック上、重複処理は許容できない。最も適切な対策はどれか？",
+    options: [
       "A. コンシューマ側でメッセージIDやビジネスキーを使って重複検知・排除を行う",
       "B. Visibility Timeoutを極端に長くする",
       "C. Delay Secondsを0にする",
@@ -531,9 +559,11 @@ export const questions = [
   },
 
   {
-    id:29, category:"DynamoDB",
-    question:"DynamoDBテーブルで、ユーザーIDごとに最新のイベントを取得したい。最も適切なキー設計はどれか？",
-    options:[
+    id: 29,
+    category: "DynamoDB",
+    question:
+      "DynamoDBテーブルで、ユーザーIDごとに最新のイベントを取得したい。最も適切なキー設計はどれか？",
+    options: [
       "A. パーティションキーにユーザーID、ソートキーにイベント時刻を設定する",
       "B. パーティションキーにイベント時刻、ソートキーにユーザーIDを設定する",
       "C. パーティションキーにランダムUUIDのみを設定する",
@@ -549,9 +579,11 @@ export const questions = [
   },
 
   {
-    id:30, category:"API Gateway",
-    question:"API Gatewayで、ステージごとに異なるバックエンドURL（開発・本番）を使いたい。最も適切な機能はどれか？",
-    options:[
+    id: 30,
+    category: "API Gateway",
+    question:
+      "API Gatewayで、ステージごとに異なるバックエンドURL（開発・本番）を使いたい。最も適切な機能はどれか？",
+    options: [
       "A. ステージ変数",
       "B. マッピングテンプレート",
       "C. 使用量プラン",
@@ -567,9 +599,11 @@ export const questions = [
   },
 
   {
-    id:31, category:"Lambda",
-    question:"Lambda関数が大量のリクエストを処理しているが、処理時間が安定しない。まず確認すべきポイントとして最も適切なのはどれか？",
-    options:[
+    id: 31,
+    category: "Lambda",
+    question:
+      "Lambda関数が大量のリクエストを処理しているが、処理時間が安定しない。まず確認すべきポイントとして最も適切なのはどれか？",
+    options: [
       "A. Lambdaのメモリ設定とCPU性能の関係",
       "B. IAMロールのポリシーサイズ",
       "C. CloudWatch Logsの保持期間",
@@ -585,9 +619,11 @@ export const questions = [
   },
 
   {
-    id:32, category:"Lambda",
-    question:"Lambda関数をVPC内で実行している。ENI作成に時間がかかりコールドスタートが増えている。最適な対策はどれか？",
-    options:[
+    id: 32,
+    category: "Lambda",
+    question:
+      "Lambda関数をVPC内で実行している。ENI作成に時間がかかりコールドスタートが増えている。最適な対策はどれか？",
+    options: [
       "A. LambdaをVPC外に移動できる部分は移動する",
       "B. VPCのCIDRを広げる",
       "C. NAT Gatewayを増やす",
@@ -603,9 +639,11 @@ export const questions = [
   },
 
   {
-    id:33, category:"DynamoDB",
-    question:"DynamoDBで、ユーザーごとの設定情報を頻繁に読み取るが、更新は少ない。読み取りレイテンシを最小化したい。最も適切な構成はどれか？",
-    options:[
+    id: 33,
+    category: "DynamoDB",
+    question:
+      "DynamoDBで、ユーザーごとの設定情報を頻繁に読み取るが、更新は少ない。読み取りレイテンシを最小化したい。最も適切な構成はどれか？",
+    options: [
       "A. DAXを導入してキャッシュする",
       "B. WCUを増やす",
       "C. テーブルを分割する",
@@ -621,9 +659,11 @@ export const questions = [
   },
 
   {
-    id:34, category:"API Gateway",
-    question:"API Gatewayで、クライアントごとに異なるレート制限を設定したい（有料プランは高いレート、無料プランは低いレート）。最も適切な構成はどれか？",
-    options:[
+    id: 34,
+    category: "API Gateway",
+    question:
+      "API Gatewayで、クライアントごとに異なるレート制限を設定したい（有料プランは高いレート、無料プランは低いレート）。最も適切な構成はどれか？",
+    options: [
       "A. 使用量プランを複数作成し、APIキーをプランごとに割り当てる",
       "B. Lambdaオーソライザーでレート制限ロジックを実装する",
       "C. WAFレートベースルールを使う",
@@ -639,9 +679,11 @@ export const questions = [
   },
 
   {
-    id:35, category:"SQS",
-    question:"SQS FIFOキューで、特定ユーザーの注文イベントを順序通りに処理したい。最も適切なメッセージグループIDの設計はどれか？",
-    options:[
+    id: 35,
+    category: "SQS",
+    question:
+      "SQS FIFOキューで、特定ユーザーの注文イベントを順序通りに処理したい。最も適切なメッセージグループIDの設計はどれか？",
+    options: [
       "A. メッセージグループIDにユーザーIDを設定する",
       "B. メッセージグループIDにランダムUUIDを設定する",
       "C. メッセージグループIDに固定値を設定する",
@@ -657,9 +699,11 @@ export const questions = [
   },
 
   {
-    id:36, category:"Step Functions",
-    question:"Step Functionsで、条件に応じて異なる処理フローに分岐したい。最も適切なステートタイプはどれか？",
-    options:[
+    id: 36,
+    category: "Step Functions",
+    question:
+      "Step Functionsで、条件に応じて異なる処理フローに分岐したい。最も適切なステートタイプはどれか？",
+    options: [
       "A. Choiceステート",
       "B. Mapステート",
       "C. Parallelステート",
@@ -675,9 +719,11 @@ export const questions = [
   },
 
   {
-    id:37, category:"EventBridge",
-    question:"EventBridgeで、特定のイベントをフィルタして別のターゲットに送信したい。最も適切な設定はどれか？",
-    options:[
+    id: 37,
+    category: "EventBridge",
+    question:
+      "EventBridgeで、特定のイベントをフィルタして別のターゲットに送信したい。最も適切な設定はどれか？",
+    options: [
       "A. イベントパターンを指定したルールを作成し、ターゲットを設定する",
       "B. すべてのイベントをLambdaで受け取り、コード内でフィルタする",
       "C. SNSトピックにすべてのイベントを送信する",
@@ -693,9 +739,11 @@ export const questions = [
   },
 
   {
-    id:38, category:"IAM",
-    question:"開発者が誤って本番環境のRDSインスタンスを削除しないようにしたい。最も適切なIAMポリシーの方針はどれか？",
-    options:[
+    id: 38,
+    category: "IAM",
+    question:
+      "開発者が誤って本番環境のRDSインスタンスを削除しないようにしたい。最も適切なIAMポリシーの方針はどれか？",
+    options: [
       "A. rds:DeleteDBInstance を本番タグ付きリソースに対して拒否する",
       "B. rds:* をすべて許可する",
       "C. ルートユーザーでのみRDSを操作させる",
@@ -711,9 +759,11 @@ export const questions = [
   },
 
   {
-    id:39, category:"CloudWatch",
-    question:"Lambda関数のエラー率が急増している。まず確認すべきCloudWatchメトリクスとして最も適切なのはどれか？",
-    options:[
+    id: 39,
+    category: "CloudWatch",
+    question:
+      "Lambda関数のエラー率が急増している。まず確認すべきCloudWatchメトリクスとして最も適切なのはどれか？",
+    options: [
       "A. Errors",
       "B. Duration",
       "C. Throttles",
@@ -729,9 +779,11 @@ export const questions = [
   },
 
   {
-    id:40, category:"CI/CD",
-    question:"CodePipelineで、ソース変更時に自動的にLambda関数を更新したい。最も適切な構成はどれか？",
-    options:[
+    id: 40,
+    category: "CI/CD",
+    question:
+      "CodePipelineで、ソース変更時に自動的にLambda関数を更新したい。最も適切な構成はどれか？",
+    options: [
       "A. ソースステージ→CodeBuildステージ→CodeDeployステージ（Lambdaデプロイ）",
       "B. ソースステージのみを設定する",
       "C. CodeBuildのみを使う",
@@ -747,9 +799,11 @@ export const questions = [
   },
 
   {
-    id:41, category:"X-Ray",
-    question:"X-Rayで、Lambda関数内の特定処理ブロック（DBアクセスなど）の詳細なレイテンシを可視化したい。最も適切な方法はどれか？",
-    options:[
+    id: 41,
+    category: "X-Ray",
+    question:
+      "X-Rayで、Lambda関数内の特定処理ブロック（DBアクセスなど）の詳細なレイテンシを可視化したい。最も適切な方法はどれか？",
+    options: [
       "A. X-Ray SDKでサブセグメントを作成し、その処理を囲む",
       "B. CloudWatch Logsの保持期間を延長する",
       "C. IAMロールに xray:* を付与するだけにする",
@@ -765,9 +819,11 @@ export const questions = [
   },
 
   {
-    id:42, category:"Lambda",
-    question:"Lambda関数がS3バケット内の大量オブジェクトを一括処理する必要がある。1回のLambda実行で全オブジェクトを処理するとタイムアウトしてしまう。最も適切な設計はどれか？",
-    options:[
+    id: 42,
+    category: "Lambda",
+    question:
+      "Lambda関数がS3バケット内の大量オブジェクトを一括処理する必要がある。1回のLambda実行で全オブジェクトを処理するとタイムアウトしてしまう。最も適切な設計はどれか？",
+    options: [
       "A. Step FunctionsでS3オブジェクト一覧を分割し、Lambdaでバッチ処理する",
       "B. Lambdaのタイムアウトを最大値まで延長する",
       "C. EC2インスタンスで処理する",
@@ -783,9 +839,11 @@ export const questions = [
   },
 
   {
-    id:43, category:"API Gateway",
-    question:"API Gatewayで、特定クライアントにだけアクセスを許可したい（IPではなくAPIキーベース）。最も適切な方法はどれか？",
-    options:[
+    id: 43,
+    category: "API Gateway",
+    question:
+      "API Gatewayで、特定クライアントにだけアクセスを許可したい（IPではなくAPIキーベース）。最も適切な方法はどれか？",
+    options: [
       "A. APIキーを発行し、使用量プランに紐付ける",
       "B. WAFでIPアドレスを許可する",
       "C. CloudFrontでオリジンアクセス制御を設定する",
@@ -801,9 +859,11 @@ export const questions = [
   },
 
   {
-    id:44, category:"DynamoDB",
-    question:"DynamoDBで、ユーザーごとのセッション情報を保存している。一定時間アクセスがないセッションを自動的に削除したい。最も適切な機能はどれか？",
-    options:[
+    id: 44,
+    category: "DynamoDB",
+    question:
+      "DynamoDBで、ユーザーごとのセッション情報を保存している。一定時間アクセスがないセッションを自動的に削除したい。最も適切な機能はどれか？",
+    options: [
       "A. TTL（Time To Live）",
       "B. GSI",
       "C. LSI",
@@ -818,9 +878,11 @@ export const questions = [
   },
 
   {
-    id:45, category:"SQS",
-    question:"SQSキューに大量のメッセージが溜まっている。コンシューマをスケールさせて処理速度を上げたい。最も適切な構成はどれか？",
-    options:[
+    id: 45,
+    category: "SQS",
+    question:
+      "SQSキューに大量のメッセージが溜まっている。コンシューマをスケールさせて処理速度を上げたい。最も適切な構成はどれか？",
+    options: [
       "A. Auto ScalingグループでEC2コンシューマを水平スケールする",
       "B. 単一EC2インスタンスでポーリングする",
       "C. Lambda1つだけで処理する",
@@ -836,9 +898,11 @@ export const questions = [
   },
 
   {
-    id:46, category:"Step Functions",
-    question:"Step Functionsで、複数の独立した処理フローを同時に実行したい。最も適切なステートタイプはどれか？",
-    options:[
+    id: 46,
+    category: "Step Functions",
+    question:
+      "Step Functionsで、複数の独立した処理フローを同時に実行したい。最も適切なステートタイプはどれか？",
+    options: [
       "A. Parallelステート",
       "B. Mapステート",
       "C. Choiceステート",
@@ -854,9 +918,11 @@ export const questions = [
   },
 
   {
-    id:47, category:"EventBridge",
-    question:"EventBridgeで、特定のイベントをSQSキューとLambdaの両方に配信したい。最も適切な構成はどれか？",
-    options:[
+    id: 47,
+    category: "EventBridge",
+    question:
+      "EventBridgeで、特定のイベントをSQSキューとLambdaの両方に配信したい。最も適切な構成はどれか？",
+    options: [
       "A. 複数ターゲットを持つEventBridgeルールを作成する",
       "B. SQSにのみ送信し、SQSからLambdaをトリガーする",
       "C. Lambdaにのみ送信し、LambdaからSQSに送信する",
@@ -872,9 +938,11 @@ export const questions = [
   },
 
   {
-    id:48, category:"IAM",
-    question:"Lambda関数がS3バケットの特定プレフィックス（logs/）にのみ書き込みできるようにしたい。最も適切なIAMポリシーはどれか？",
-    options:[
+    id: 48,
+    category: "IAM",
+    question:
+      "Lambda関数がS3バケットの特定プレフィックス（logs/）にのみ書き込みできるようにしたい。最も適切なIAMポリシーはどれか？",
+    options: [
       "A. s3:PutObject を arn:aws:s3:::my-bucket/logs/* に対してのみ許可する",
       "B. s3:* を my-bucket 全体に対して許可する",
       "C. s3:PutObject をすべてのバケットに対して許可する",
@@ -890,9 +958,11 @@ export const questions = [
   },
 
   {
-    id:49, category:"CloudWatch",
-    question:"Lambda関数のスロットル（Throttles）が頻発している。最も適切な対策はどれか？",
-    options:[
+    id: 49,
+    category: "CloudWatch",
+    question:
+      "Lambda関数のスロットル（Throttles）が頻発している。最も適切な対策はどれか？",
+    options: [
       "A. Lambdaの同時実行数制限を引き上げる",
       "B. CloudWatch Logsを無効化する",
       "C. IAMロールの権限を増やす",
@@ -908,9 +978,11 @@ export const questions = [
   },
 
   {
-    id:50, category:"CI/CD",
-    question:"SAMを使ったサーバレスアプリケーションを、複数環境（dev/stg/prod）にデプロイしたい。最も適切な方法はどれか？",
-    options:[
+    id: 50,
+    category: "CI/CD",
+    question:
+      "SAMを使ったサーバレスアプリケーションを、複数環境（dev/stg/prod）にデプロイしたい。最も適切な方法はどれか？",
+    options: [
       "A. 環境ごとに別のスタック名・パラメータを指定して sam deploy を実行する",
       "B. すべて同じスタック名で上書きデプロイする",
       "C. Lambdaコンソールから手動でZIPをアップロードする",
@@ -926,16 +998,18 @@ export const questions = [
   },
 
   {
-  id:51, category:"Lambda",
-  question:"Lambda関数が大量のリクエストを処理しているが、時々タイムアウトする。最も適切な改善策はどれか？",
-  options:[
+    id: 51,
+    category: "Lambda",
+    question:
+      "Lambda関数が大量のリクエストを処理しているが、時々タイムアウトする。最も適切な改善策はどれか？",
+    options: [
     "A. Lambdaのタイムアウト値を最大まで延長する",
     "B. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
     "C. IAMロールの権限を増やす",
     "D. Lambdaのメモリを最小にする"
   ],
-  answer:1,
-  explanation:
+    answer: 1,
+    explanation:
     "正解はB。\n\n" +
     "■A: タイムアウトを最大まで延長すると、失敗時にLambdaが長時間ぶら下がり、コスト増＋スロットルの原因になる。根本原因（外部APIの遅延）を解決していない。\n\n" +
     "■B: 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直すのが最も効果的。DVA試験では「外部依存のレイテンシはアプリ側で制御せよ」が頻出。\n\n" +
@@ -943,16 +1017,18 @@ export const questions = [
     "■D: メモリを最小にするとCPU性能も下がり、処理時間が増える可能性が高い。タイムアウト問題を悪化させる。"
 },
 {
-  id:52, category:"Lambda",
-  question:"Lambda関数をVPC内で実行している。ENI作成によるコールドスタートが頻発している。最も適切な対策はどれか？",
-  options:[
+    id: 52,
+    category: "Lambda",
+    question:
+      "Lambda関数をVPC内で実行している。ENI作成によるコールドスタートが頻発している。最も適切な対策はどれか？",
+    options: [
     "A. RDS Proxyを利用する",
     "B. VPCのCIDRを広げる",
     "C. NAT Gatewayを増やす",
     "D. Lambdaのメモリを減らす"
   ],
-  answer:0,
-  explanation:
+    answer: 0,
+    explanation:
     "正解はA。\n\n" +
     "■A: RDS ProxyはDB接続プールを提供し、ENI作成によるコールドスタートの影響を大幅に軽減する。VPC内Lambdaのベストプラクティス。\n\n" +
     "■B: CIDRを広げてもENI作成速度は変わらない。IP枯渇対策にはなるが、コールドスタート対策ではない。\n\n" +
@@ -960,9 +1036,11 @@ export const questions = [
     "■D: メモリを減らすとCPU性能も下がり、処理時間が増える可能性がある。コールドスタートとは無関係。"
 },
 {
-  id:53, category:"API Gateway",
-  question:"API Gatewayで、バックエンドレスポンスを加工して返したい。最も適切な機能はどれか？",
-  options:[
+    id: 53,
+    category: "API Gateway",
+    question:
+      "API Gatewayで、バックエンドレスポンスを加工して返したい。最も適切な機能はどれか？",
+    options: [
     "A. マッピングテンプレート",
     "B. ステージ変数",
     "C. 使用量プラン",
@@ -977,9 +1055,11 @@ export const questions = [
     "■D: APIキーは認証の話であり、レスポンス加工とは無関係。"
 },
 {
-  id:54, category:"API Gateway",
-  question:"API Gatewayで、クライアントごとに異なるレート制限を設定したい。最も適切な構成はどれか？",
-  options:[
+    id: 54,
+    category: "API Gateway",
+    question:
+      "API Gatewayで、クライアントごとに異なるレート制限を設定したい。最も適切な構成はどれか？",
+    options: [
     "A. 使用量プランを複数作成し、APIキーを紐付ける",
     "B. WAFレートベースルールを使う",
     "C. Lambdaオーソライザーでレート制限を自前実装する",
@@ -994,9 +1074,11 @@ export const questions = [
     "■D: CloudFrontキャッシュはレート制限とは無関係。"
 },
 {
-  id:55, category:"DynamoDB",
-  question:"DynamoDBでホットパーティションが発生している。根本的な対策はどれか？",
-  options:[
+    id: 55,
+    category: "DynamoDB",
+    question:
+      "DynamoDBでホットパーティションが発生している。根本的な対策はどれか？",
+    options: [
     "A. RCU/WCUを増やす",
     "B. パーティションキー設計を見直し分散させる",
     "C. LSIを追加する",
@@ -1098,26 +1180,9 @@ export const questions = [
 
 {
   id:61, category:"Lambda",
-  question:"Lambda関数が大量のリクエストを処理しているが、処理時間が安定しない。まず確認すべきポイントとして最も適切なのはどれか？",
+  question:"Lambda関数がVPC内で実行されており、ENI作成によるコールドスタートが頻発している。最適な対策はどれか？",
   options:[
-    "A. Lambdaのメモリ設定とCPU性能の関係",
-    "B. IAMロールのポリシーサイズ",
-    "C. CloudWatch Logsの保持期間",
-    "D. VPCのCIDRブロック"
-  ],
-  answer:0,
-  explanation:
-    "正解はA。\n\n" +
-    "■A: Lambdaはメモリを増やすとCPU性能も比例して増えるため、処理時間の安定性に直結する。まずここを見直すべき。\n\n" +
-    "■B: IAMポリシーサイズは権限の話であり、処理時間とは無関係。\n\n" +
-    "■C: Logs保持期間はコストの話であり、処理時間とは無関係。\n\n" +
-    "■D: VPC CIDRはネットワーク設計の話で、処理時間の揺れとは関係がない。"
-},
-{
-  id:62, category:"Lambda",
-  question:"Lambda関数をVPC内で実行している。ENI作成に時間がかかりコールドスタートが増えている。最適な対策はどれか？",
-  options:[
-    "A. LambdaをVPC外に移動できる部分は移動する",
+    "A. RDS Proxyを利用する",
     "B. VPCのCIDRを広げる",
     "C. NAT Gatewayを増やす",
     "D. CloudWatch Logsを削除する"
@@ -1125,45 +1190,66 @@ export const questions = [
   answer:0,
   explanation:
     "正解はA。\n\n" +
-    "■A: VPC接続が不要な処理はVPC外Lambdaに移動することでENI作成を減らせる。コールドスタート対策の王道。\n\n" +
+    "■A: RDS ProxyはDB接続プールを提供し、ENI作成によるコールドスタートの影響を大幅に軽減する。\n\n" +
     "■B: CIDR拡張はIP枯渇対策であり、ENI作成速度とは無関係。\n\n" +
     "■C: NAT Gateway増設は外部通信の話で、コールドスタートとは無関係。\n\n" +
-    "■D: Logs削除は監視能力が落ちるだけで、コールドスタートとは無関係。"
+    "■D: Logs削除は監視能力が落ちるだけ。"
 },
+
 {
-  id:63, category:"API Gateway",
-  question:"API Gateway REST APIで、バックエンドのレスポンスを加工して返したい。最も適切な機能はどれか？",
+  id:62, category:"API Gateway",
+  question:"API Gatewayでクライアントごとに異なるレート制限を設定したい。最適な構成はどれか？",
   options:[
-    "A. マッピングテンプレート",
-    "B. ステージ変数",
-    "C. 使用量プラン",
-    "D. APIキー"
-  ],
-  answer:0,
-  explanation:
-    "正解はA。\n\n" +
-    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
-    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
-    "■C: 使用量プランはレート制限の話。\n\n" +
-    "■D: APIキーは認証の話。"
-},
-{
-  id:64, category:"API Gateway",
-  question:"API Gatewayでクライアントごとにレート制限を行いたい。最適な構成はどれか？",
-  options:[
-    "A. 使用量プラン＋APIキー",
-    "B. WAFレートベースルール",
-    "C. Cognitoユーザープール",
-    "D. Lambdaオーソライザー"
+    "A. 使用量プランを複数作成しAPIキーを紐付ける",
+    "B. WAFレートベースルールを使う",
+    "C. Lambdaオーソライザーでレート制限を自前実装する",
+    "D. CloudFrontキャッシュを増やす"
   ],
   answer:0,
   explanation:
     "正解はA。\n\n" +
     "■A: 使用量プラン＋APIキーはクライアント単位のレート制限をネイティブに提供する。\n\n" +
     "■B: WAFはIP単位であり、クライアント単位ではない。\n\n" +
-    "■C: Cognitoは認証であり、レート制限ではない。\n\n" +
-    "■D: Lambdaオーソライザーで自前実装すると複雑で非推奨。"
+    "■C: 自前実装は複雑で非推奨。\n\n" +
+    "■D: CloudFrontキャッシュはレート制限とは無関係。"
 },
+
+{
+  id:63, category:"DynamoDB",
+  question:"DynamoDBでホットパーティションが発生している。根本的な対策はどれか？",
+  options:[
+    "A. パーティションキー設計を見直し分散させる",
+    "B. RCU/WCUを増やす",
+    "C. LSIを追加する",
+    "D. Streamsを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ホットパーティションはキー設計が原因。アクセスを均等分散させるのが唯一の根本対策。\n\n" +
+    "■B: RCU/WCU増加は応急処置であり、負荷集中は解決しない。\n\n" +
+    "■C: LSIはPKを共有するため負荷分散にはならない。\n\n" +
+    "■D: Streamsはイベント通知であり、負荷分散とは無関係。"
+},
+
+{
+  id:64, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを増やす",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
 {
   id:65, category:"DynamoDB",
   question:"DynamoDBでホットパーティションが発生している。根本的な対策はどれか？",
@@ -1544,8 +1630,8 @@ export const questions = [
     "C. CodePipeline＋CodeBuild＋CodeDeploy",
     "D. CloudFormationのみ"
   ],
-  answer:2,
-  explanation:
+    answer: 2,
+    explanation:
     "正解はC。\n\n" +
     "■A: CodeBuildはビルド専用で、パイプライン制御はできない。\n\n" +
     "■B: CodeDeployはデプロイ専用で、ビルドやソース検知はできない。\n\n" +
@@ -1714,22 +1800,23 @@ export const questions = [
     "■D: Logs削除は監視能力が落ちるだけ。"
 },
 
+
 {
-  id:95, category:"DynamoDB",
-  question:"DynamoDBで読み取り頻度が高く、更新が少ないデータを高速に取得したい。最適な構成はどれか？",
+  id:95, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、時々タイムアウトする。最も適切な改善策はどれか？",
   options:[
-    "A. DAXを導入する",
-    "B. WCUを増やす",
-    "C. テーブルを分割する",
-    "D. TTLを有効化する"
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
   ],
   answer:0,
   explanation:
     "正解はA。\n\n" +
-    "■A: DAXはインメモリキャッシュであり、読み取り中心のワークロードに最適。レイテンシとコストの両面で有利。\n\n" +
-    "■B: WCUは書き込みキャパシティであり、読み取りレイテンシとは無関係。\n\n" +
-    "■C: テーブル分割は複雑化するだけで、レイテンシ改善には直結しない。\n\n" +
-    "■D: TTLは期限削除の話であり、読み取りレイテンシとは無関係。"
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり、根本解決にならない。\n\n" +
+    "■C: IAM権限はタイムアウトとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
 },
 
 {
@@ -1820,9 +1907,3603 @@ export const questions = [
     "■B: バケット全体への s3:* は権限が広すぎる。\n\n" +
     "■C: 全バケットへの PutObject は危険。\n\n" +
     "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:101, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出す際、レイテンシが大きくばらつく。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのメモリを減らす",
+    "C. IAMロールの権限を増やす",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すのが最も効果的。\n\n" +
+    "■B: メモリ減少はCPU性能低下につながり逆効果。\n\n" +
+    "■C: IAM権限はレイテンシとは無関係。\n\n" +
+    "■D: VPC CIDRはネットワーク設計の話であり、外部APIレイテンシとは無関係。"
+},
+
+{
+  id:102, category:"API Gateway",
+  question:"API Gatewayでレスポンスを加工して返したい。最も適切な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:103, category:"DynamoDB",
+  question:"DynamoDBで大量の書き込みが発生している。スロットリングを避けたい場合の最適な対策はどれか？",
+  options:[
+    "A. 書き込みをバッチ化して BatchWriteItem を使う",
+    "B. WCUを減らす",
+    "C. テーブルを複数に分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: BatchWriteItem は複数書き込みをまとめて送信でき、効率的にスループットを使える。スロットリング回避に有効。\n\n" +
+    "■B: WCU減少は逆効果。\n\n" +
+    "■C: テーブル分割は設計が複雑化し、根本解決にならない。\n\n" +
+    "■D: TTLは期限削除の話であり、書き込みスロットリングとは無関係。"
+},
+
+{
+  id:104, category:"SQS",
+  question:"SQS標準キューでメッセージ順序が保証されない。順序が重要な場合の最適な選択はどれか？",
+  options:[
+    "A. FIFOキューに変更する",
+    "B. Visibility Timeoutを短くする",
+    "C. Delay Secondsを増やす",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: FIFOキューは順序保証と重複排除を提供する。順序が重要なユースケースに最適。\n\n" +
+    "■B: Visibility Timeoutは順序保証とは無関係。\n\n" +
+    "■C: Delay Secondsは遅延の話。\n\n" +
+    "■D: Logs無効化は監視能力低下。"
+},
+
+{
+  id:105, category:"Step Functions",
+  question:"Step Functionsで複数の外部APIを順番に呼び出したい。最適なステート構成はどれか？",
+  options:[
+    "A. Taskステートを直列に並べる",
+    "B. Parallelステートで並列化する",
+    "C. Mapステートで繰り返す",
+    "D. Choiceステートで条件分岐する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Taskステートを直列に並べることで、順番に外部APIを呼び出せる。最もシンプルで明確。\n\n" +
+    "■B: Parallelは同時実行であり、順番実行には不適。\n\n" +
+    "■C: Mapは配列要素の繰り返し処理。\n\n" +
+    "■D: Choiceは条件分岐。"
+},
+
+{
+  id:106, category:"EventBridge",
+  question:"EventBridgeで特定イベントをフィルタしてターゲットに送信したい。最適な方法はどれか？",
+  options:[
+    "A. イベントパターンを指定したルールを作成する",
+    "B. すべてのイベントをLambdaで受けてフィルタする",
+    "C. SNSに送信してサブスクライバー側でフィルタする",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールのイベントパターンでフィルタするのが最も効率的で疎結合。\n\n" +
+    "■B: Lambdaでフィルタすると不要なイベントまでLambdaが起動しコスト増。\n\n" +
+    "■C: SNS側フィルタは冗長。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:107, category:"IAM",
+  question:"本番環境のRDSインスタンスを誤って削除しないようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. rds:DeleteDBInstance を本番タグ付きリソースに対して拒否する",
+    "B. rds:* をすべて許可する",
+    "C. ルートユーザーで操作させる",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: タグ条件（Environment=Prod）で Delete を Deny するのが誤削除防止の王道。\n\n" +
+    "■B: フル権限は危険。\n\n" +
+    "■C: ルートユーザー操作は最悪。\n\n" +
+    "■D: Logs無効化は監査性低下。"
+},
+
+{
+  id:108, category:"CloudWatch",
+  question:"Lambda関数のエラー率が急増している。まず確認すべきメトリクスはどれか？",
+  options:[
+    "A. Errors",
+    "B. Duration",
+    "C. Throttles",
+    "D. IteratorAge"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Errors は失敗回数を示す最重要メトリクス。\n\n" +
+    "■B: Duration は処理時間であり、エラー率とは別。\n\n" +
+    "■C: Throttles は同時実行数制限の話。\n\n" +
+    "■D: IteratorAge はストリーム遅延の話。"
+},
+
+{
+  id:109, category:"CI/CD",
+  question:"CodePipelineでソース変更時に自動的にLambdaを更新したい。最適な構成はどれか？",
+  options:[
+    "A. ソース→CodeBuild→CodeDeploy のパイプラインを構成する",
+    "B. ソースステージのみを設定する",
+    "C. CodeBuildのみを使う",
+    "D. CloudFormationのみを使う"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: CodePipelineが全体をオーケストレーションし、ビルドはCodeBuild、デプロイはCodeDeployが担当する。自動更新の王道。\n\n" +
+    "■B: ソースステージだけでは更新されない。\n\n" +
+    "■C: CodeBuildのみではデプロイできない。\n\n" +
+    "■D: CloudFormation単体ではソース変更検知ができない。"
+},
+
+{
+  id:110, category:"X-Ray",
+  question:"X-RayでLambda関数内の特定処理ブロック（DBアクセスなど）を詳細に可視化したい。最適な方法はどれか？",
+  options:[
+    "A. X-Ray SDKでサブセグメントを作成する",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与するだけにする",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: サブセグメントを作成することで特定処理のレイテンシを詳細に可視化できる。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけではサブセグメントは作られない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:111, category:"Lambda",
+  question:"Lambda関数が大量のリクエストを処理しており、同時実行数が急増してバックエンドが過負荷になっている。最適な対策はどれか？",
+  options:[
+    "A. Lambdaの最大同時実行数を制限する",
+    "B. Lambdaのタイムアウトを延長する",
+    "C. メモリを減らす",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaの最大同時実行数（reserved concurrency）を制限することで、バックエンドの許容量に合わせてスループットを制御できる。SQS連携でも頻出のベストプラクティス。\n\n" +
+    "■B: タイムアウト延長は過負荷問題の解決にならず、むしろリソース占有時間が増えて悪化する。\n\n" +
+    "■C: メモリ減少はCPU性能低下につながり逆効果。\n\n" +
+    "■D: Logs無効化は監視能力低下であり、過負荷問題とは無関係。"
+},
+
+{
+  id:112, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスをキャッシュし、読み取り負荷を減らしたい。最適な機能はどれか？",
+  options:[
+    "A. API Gatewayキャッシュ",
+    "B. CloudFrontキャッシュ",
+    "C. Lambda内のグローバル変数キャッシュ",
+    "D. DynamoDBにキャッシュテーブルを作る"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: API Gatewayはステージごとにレスポンスキャッシュ機能を提供し、TTLやキー設定も可能。APIレイヤーでのキャッシュとして最適。\n\n" +
+    "■B: CloudFrontは静的コンテンツ向けであり、API Gatewayのネイティブキャッシュが使える状況ではそちらが優先。\n\n" +
+    "■C: Lambda内キャッシュはコンテナ再利用時のみ有効で不安定。\n\n" +
+    "■D: DynamoDBキャッシュは過剰設計。"
+},
+
+{
+  id:113, category:"DynamoDB",
+  question:"DynamoDBで別属性をキーに検索したい。既存PKは変更したくない。最適な機能はどれか？",
+  options:[
+    "A. GSI",
+    "B. LSI",
+    "C. TTL",
+    "D. Streams"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: GSIは別のPK/SKを持てるため、既存テーブルのPKを変えずに検索機能を拡張できる。\n\n" +
+    "■B: LSIはPKを共有するため、別属性をPKにした検索には使えない。\n\n" +
+    "■C: TTLは期限削除の話。\n\n" +
+    "■D: Streamsはイベント通知の話。"
+},
+
+{
+  id:114, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で重複検知・冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを0にする",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側でメッセージIDやビジネスキーを使って重複検知するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:115, category:"Step Functions",
+  question:"Step Functionsで条件に応じて異なる処理フローに分岐したい。最適なステートはどれか？",
+  options:[
+    "A. Choiceステート",
+    "B. Mapステート",
+    "C. Parallelステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Choiceステートは条件分岐用であり、if/elseロジックをワークフローとして表現できる。\n\n" +
+    "■B: Mapは配列要素の繰り返し処理。\n\n" +
+    "■C: Parallelは並列実行。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:116, category:"EventBridge",
+  question:"EventBridgeで複数ターゲットに同じイベントを配信したい。最適な構成はどれか？",
+  options:[
+    "A. 複数ターゲットを持つEventBridgeルールを作成する",
+    "B. SNSに送信してサブスクライバー側で分岐する",
+    "C. Lambdaで分岐処理を実装する",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールは複数ターゲットを持てるため、同じイベントを複数サービスに直接配信できる。\n\n" +
+    "■B: SNS経由は冗長。\n\n" +
+    "■C: Lambdaで分岐は過剰設計。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:117, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで images/ 以下のみ読み取り可能にできる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:118, category:"CloudWatch",
+  question:"Lambda関数がスロットル（Throttles）を頻発している。最適な対策はどれか？",
+  options:[
+    "A. Lambdaの同時実行数制限を引き上げる",
+    "B. CloudWatch Logsを無効化する",
+    "C. IAMロールの権限を増やす",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Throttlesは同時実行数上限に達したときに発生するため、必要に応じて上限を引き上げるのが正しい対策。\n\n" +
+    "■B: Logs無効化は監視能力低下。\n\n" +
+    "■C: IAM権限はスロットルとは無関係。\n\n" +
+    "■D: VPC CIDRは関係ない。"
+},
+
+{
+  id:119, category:"CI/CD",
+  question:"SAMを使ったサーバレスアプリケーションを複数環境（dev/stg/prod）にデプロイしたい。最適な方法はどれか？",
+  options:[
+    "A. 環境ごとに別のスタック名・パラメータで sam deploy を実行する",
+    "B. すべて同じスタック名で上書きデプロイする",
+    "C. Lambdaコンソールで手動デプロイする",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SAMはCloudFormationスタックとしてデプロイされるため、環境ごとにスタック名やパラメータを変えるのが正しい運用。\n\n" +
+    "■B: 同じスタック名では環境が分離できない。\n\n" +
+    "■C: 手動デプロイはCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけではスタック更新が行われない。"
+},
+
+{
+  id:120, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:121, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、時々タイムアウトする。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり、根本解決にならない。\n\n" +
+    "■C: IAM権限はタイムアウトとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:122, category:"API Gateway",
+  question:"API Gatewayでクライアントごとに異なるレート制限を設定したい。最適な構成はどれか？",
+  options:[
+    "A. 使用量プランを複数作成しAPIキーを紐付ける",
+    "B. WAFレートベースルールを使う",
+    "C. Lambdaオーソライザーでレート制限を自前実装する",
+    "D. CloudFrontキャッシュを増やす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 使用量プラン＋APIキーはクライアント単位のレート制限をネイティブに提供する。無料・有料プランの差別化に最適。\n\n" +
+    "■B: WAFはIP単位であり、クライアント単位ではない。\n\n" +
+    "■C: 自前実装は複雑で非推奨。\n\n" +
+    "■D: CloudFrontキャッシュはレート制限とは無関係。"
+},
+
+{
+  id:123, category:"DynamoDB",
+  question:"DynamoDBで大量の読み取りが発生している。コストを抑えたい場合の最適な対策はどれか？",
+  options:[
+    "A. DAXを導入する",
+    "B. RCUを減らす",
+    "C. テーブルを複数に分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: DAXはインメモリキャッシュであり、読み取り負荷を大幅に削減できる。読み取り中心のワークロードに最適。\n\n" +
+    "■B: RCU減少はスロットリング増加につながり逆効果。\n\n" +
+    "■C: テーブル分割は複雑化するだけで、読み取りコスト削減には直結しない。\n\n" +
+    "■D: TTLは期限削除の話であり、読み取り負荷とは無関係。"
+},
+
+{
+  id:124, category:"SQS",
+  question:"SQS FIFOキューでスループットを最大化したい。最も重要な設定はどれか？",
+  options:[
+    "A. メッセージグループIDを増やす",
+    "B. Visibility Timeoutを短くする",
+    "C. Delay Secondsを増やす",
+    "D. キューを標準キューに変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: FIFOはメッセージグループID単位で順序保証されるため、グループ数を増やすと並列度が上がりスループットが向上する。\n\n" +
+    "■B: Visibility Timeoutはスループットとは無関係。\n\n" +
+    "■C: Delay Secondsは遅延の話。\n\n" +
+    "■D: 標準キューにすると順序保証が失われる。"
+},
+
+{
+  id:125, category:"Step Functions",
+  question:"Step Functionsで外部APIを順番に呼び出したい。最適なステート構成はどれか？",
+  options:[
+    "A. Taskステートを直列に並べる",
+    "B. Parallelステートで並列化する",
+    "C. Mapステートで繰り返す",
+    "D. Choiceステートで条件分岐する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Taskステートを直列に並べることで、順番に外部APIを呼び出せる。最もシンプルで明確。\n\n" +
+    "■B: Parallelは同時実行であり、順番実行には不適。\n\n" +
+    "■C: Mapは配列要素の繰り返し処理。\n\n" +
+    "■D: Choiceは条件分岐。"
+},
+
+{
+  id:126, category:"EventBridge",
+  question:"EventBridgeで特定イベントをフィルタしてターゲットに送信したい。最適な方法はどれか？",
+  options:[
+    "A. イベントパターンを指定したルールを作成する",
+    "B. すべてのイベントをLambdaで受けてフィルタする",
+    "C. SNSに送信してサブスクライバー側でフィルタする",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールのイベントパターンでフィルタするのが最も効率的で疎結合。\n\n" +
+    "■B: Lambdaでフィルタすると不要なイベントまでLambdaが起動しコスト増。\n\n" +
+    "■C: SNS側フィルタは冗長。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:127, category:"IAM",
+  question:"開発者が誤って本番環境のリソースを削除しないようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. 本番タグ付きリソースに対する削除系アクションをDenyする",
+    "B. すべての権限を付与する",
+    "C. ルートユーザーで操作させる",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: タグ条件（Environment=Prod）で Delete 系アクションを拒否するのが誤削除防止の王道。\n\n" +
+    "■B: フル権限は危険。\n\n" +
+    "■C: ルートユーザー操作は最悪。\n\n" +
+    "■D: Logs無効化は監査性低下。"
+},
+
+{
+  id:128, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:129, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. CodePipelineのパラメータストア（SSM）を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store を使うことで、環境ごとに異なる設定値を安全に管理し、CodePipelineやCodeBuildで参照できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:130, category:"X-Ray",
+  question:"X-Rayでトレースが一部しか表示されず、Lambda内の特定処理が可視化されていない。最適な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでサブセグメントを作成する",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: サブセグメントを作成することで、特定処理ブロックのレイテンシやエラーを詳細に可視化できる。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけではサブセグメントは作られない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:131, category:"Lambda",
+  question:"Lambda関数がVPC内で実行されており、ENI作成によるコールドスタートが頻発している。最適な対策はどれか？",
+  options:[
+    "A. LambdaをVPC外に移動できる部分は移動する",
+    "B. VPCのCIDRを広げる",
+    "C. NAT Gatewayを増やす",
+    "D. CloudWatch Logsを削除する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: VPC接続が不要な処理はVPC外Lambdaに移動することでENI作成を減らせる。コールドスタート対策の王道。\n\n" +
+    "■B: CIDR拡張はIP枯渇対策であり、ENI作成速度とは無関係。\n\n" +
+    "■C: NAT Gateway増設は外部通信の話で、コールドスタートとは無関係。\n\n" +
+    "■D: Logs削除は監視能力が落ちるだけ。"
+},
+
+{
+  id:132, category:"API Gateway",
+  question:"API Gatewayでバックエンドのレスポンスをキャッシュしたい。最適な機能はどれか？",
+  options:[
+    "A. API Gatewayキャッシュ",
+    "B. CloudFrontキャッシュ",
+    "C. Lambda内キャッシュ",
+    "D. DynamoDBでキャッシュテーブルを作る"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: API Gatewayはレスポンスキャッシュ機能を持ち、TTL設定も可能。APIレイヤーでのキャッシュとして最適。\n\n" +
+    "■B: CloudFrontは静的コンテンツ向けであり、API Gatewayのネイティブキャッシュが使える状況ではそちらが優先。\n\n" +
+    "■C: Lambda内キャッシュはコンテナ再利用時のみ有効で不安定。\n\n" +
+    "■D: DynamoDBキャッシュは過剰設計。"
+},
+
+{
+  id:133, category:"DynamoDB",
+  question:"DynamoDBで大量の書き込みが発生している。スロットリングを避けたい場合の最適な対策はどれか？",
+  options:[
+    "A. 書き込みをバッチ化して BatchWriteItem を使う",
+    "B. WCUを減らす",
+    "C. テーブルを複数に分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: BatchWriteItem は複数書き込みをまとめて送信でき、効率的にスループットを使える。スロットリング回避に有効。\n\n" +
+    "■B: WCU減少は逆効果。\n\n" +
+    "■C: テーブル分割は複雑化し、根本解決にならない。\n\n" +
+    "■D: TTLは期限削除の話であり、書き込みスロットリングとは無関係。"
+},
+
+{
+  id:134, category:"SQS",
+  question:"SQS標準キューでメッセージ順序が保証されない。順序が重要な場合の最適な選択はどれか？",
+  options:[
+    "A. FIFOキューに変更する",
+    "B. Visibility Timeoutを短くする",
+    "C. Delay Secondsを増やす",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: FIFOキューは順序保証と重複排除を提供する。順序が重要なユースケースに最適。\n\n" +
+    "■B: Visibility Timeoutは順序保証とは無関係。\n\n" +
+    "■C: Delay Secondsは遅延の話。\n\n" +
+    "■D: Logs無効化は監視能力低下。"
+},
+
+{
+  id:135, category:"Step Functions",
+  question:"Step Functionsで長時間処理を行う際、Lambdaコストを抑えたい。最適な方法はどれか？",
+  options:[
+    "A. サービス統合を使いLambdaを減らす",
+    "B. すべてLambdaで実装する",
+    "C. CloudWatch Logsを無効化する",
+    "D. X-Rayを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Step FunctionsはAWS SDK統合でLambdaを使わずにサービス呼び出しできる。長時間処理のコスト削減に最適。\n\n" +
+    "■B: 全Lambdaはコスト増。\n\n" +
+    "■C: Logs無効化は監視能力低下。\n\n" +
+    "■D: X-Ray無効化は可観測性低下。"
+},
+
+{
+  id:136, category:"EventBridge",
+  question:"EventBridgeでcron式を使って毎日Lambdaを起動したい。最適な設定はどれか？",
+  options:[
+    "A. EventBridgeルールでcron式を指定する",
+    "B. Lambdaのタイムアウトを増やす",
+    "C. SQSキューを使う",
+    "D. CloudWatch Logsでスケジュールする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはcron式をサポート。定期実行の王道。\n\n" +
+    "■B: タイムアウトは関係ない。\n\n" +
+    "■C: SQSはスケジュール機能を持たない。\n\n" +
+    "■D: Logsはスケジュール機能を持たない。"
+},
+
+{
+  id:137, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで images/ 以下のみ読み取り可能にできる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:138, category:"CloudWatch",
+  question:"Lambda関数のエラー率が急増している。まず確認すべきメトリクスはどれか？",
+  options:[
+    "A. Errors",
+    "B. Duration",
+    "C. Throttles",
+    "D. IteratorAge"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Errors は失敗回数を示す最重要メトリクス。\n\n" +
+    "■B: Duration は処理時間であり、エラー率とは別。\n\n" +
+    "■C: Throttles は同時実行数制限の話。\n\n" +
+    "■D: IteratorAge はストリーム遅延の話。"
+},
+
+{
+  id:139, category:"CI/CD",
+  question:"SAMを使ったサーバレスアプリケーションを複数環境（dev/stg/prod）にデプロイしたい。最適な方法はどれか？",
+  options:[
+    "A. 環境ごとに別のスタック名・パラメータで sam deploy を実行する",
+    "B. すべて同じスタック名で上書きデプロイする",
+    "C. Lambdaコンソールで手動デプロイする",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SAMはCloudFormationスタックとしてデプロイされるため、環境ごとにスタック名やパラメータを変えるのが正しい運用。\n\n" +
+    "■B: 同じスタック名では環境が分離できない。\n\n" +
+    "■C: 手動デプロイはCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけではスタック更新が行われない。"
+},
+
+{
+  id:140, category:"X-Ray",
+  question:"X-RayでLambda内の特定処理ブロック（DBアクセスなど）を詳細に可視化したい。最適な方法はどれか？",
+  options:[
+    "A. X-Ray SDKでサブセグメントを作成する",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与するだけにする",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: サブセグメントを作成することで特定処理のレイテンシを詳細に可視化できる。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけではサブセグメントは作られない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:141, category:"Lambda",
+  question:"Lambda関数がSQSからの大量メッセージを処理しているが、バックエンドが過負荷になっている。最適な対策はどれか？",
+  options:[
+    "A. Lambdaの最大同時実行数を制限する",
+    "B. SQSのVisibility Timeoutを短くする",
+    "C. SQSをFIFOに変更する",
+    "D. Lambdaのメモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaのreserved concurrencyで同時実行数を制限することで、バックエンドの許容量に合わせてスループットを制御できる。SQS→Lambda連携の王道対策。\n\n" +
+    "■B: Visibility Timeout短縮は再配信が増え逆効果。\n\n" +
+    "■C: FIFOは順序保証の話であり、過負荷対策ではない。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:142, category:"API Gateway",
+  question:"API Gatewayでバックエンドのレスポンスを加工して返したい。最適な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:143, category:"DynamoDB",
+  question:"DynamoDBでホットパーティションが発生している。根本的な対策はどれか？",
+  options:[
+    "A. パーティションキー設計を見直し分散させる",
+    "B. RCU/WCUを増やす",
+    "C. LSIを追加する",
+    "D. Streamsを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ホットパーティションはキー設計が原因。アクセスを均等分散させるのが唯一の根本対策。\n\n" +
+    "■B: RCU/WCU増加は応急処置であり、負荷集中は解決しない。\n\n" +
+    "■C: LSIはPKを共有するため負荷分散にはならない。\n\n" +
+    "■D: Streamsはイベント通知であり、負荷分散とは無関係。"
+},
+
+{
+  id:144, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを増やす",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:145, category:"Step Functions",
+  question:"Step Functionsで複数の独立した処理フローを同時に実行したい。最適なステートはどれか？",
+  options:[
+    "A. Parallelステート",
+    "B. Mapステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Parallelステートは複数ブランチを並列に実行できる。独立フローの同時実行に最適。\n\n" +
+    "■B: Mapは配列要素の繰り返し処理。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:146, category:"EventBridge",
+  question:"EventBridgeでイベントを別アカウントに転送したい。最適な方法はどれか？",
+  options:[
+    "A. イベントバスのルーティング",
+    "B. SNSサブスクリプション",
+    "C. SQSキュー共有",
+    "D. Lambdaで転送処理を実装する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはイベントバス間ルーティングをネイティブにサポートしており、最もシンプルで安全。\n\n" +
+    "■B: SNSでも可能だが冗長。\n\n" +
+    "■C: SQS共有は用途が異なる。\n\n" +
+    "■D: Lambdaで転送は過剰設計。"
+},
+
+{
+  id:147, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（logs/）にのみ書き込みできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:PutObject を arn:aws:s3:::my-bucket/logs/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:PutObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで logs/ 以下への書き込みのみを許可できる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:148, category:"CloudWatch",
+  question:"API Gatewayのバックエンド統合部分の遅延のみを監視したい。最適なメトリクスはどれか？",
+  options:[
+    "A. Latency",
+    "B. IntegrationLatency",
+    "C. 4XXError",
+    "D. 5XXError"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■A: Latency は全体レイテンシであり、バックエンド遅延だけを見たい場合には不適。\n\n" +
+    "■B: IntegrationLatency はバックエンド統合部分のレイテンシのみを示す。\n\n" +
+    "■C/D: エラー率の話であり、遅延監視とは無関係。"
+},
+
+{
+  id:149, category:"CI/CD",
+  question:"CodePipelineでソース変更時に自動的にLambdaを更新したい。最適な構成はどれか？",
+  options:[
+    "A. ソース→CodeBuild→CodeDeploy のパイプラインを構成する",
+    "B. ソースステージのみを設定する",
+    "C. CodeBuildのみを使う",
+    "D. CloudFormationのみを使う"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: CodePipelineが全体をオーケストレーションし、ビルドはCodeBuild、デプロイはCodeDeployが担当する。自動更新の王道。\n\n" +
+    "■B: ソースステージだけでは更新されない。\n\n" +
+    "■C: CodeBuildのみではデプロイできない。\n\n" +
+    "■D: CloudFormation単体ではソース変更検知ができない。"
+},
+
+{
+  id:150, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:151, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、レイテンシが大きくばらつく。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり、根本解決にならない。\n\n" +
+    "■C: IAM権限はレイテンシとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:152, category:"API Gateway",
+  question:"API Gatewayでステージごとに異なるバックエンドURLを使いたい。最適な機能はどれか？",
+  options:[
+    "A. ステージ変数",
+    "B. マッピングテンプレート",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ステージ変数はステージごとに異なる値（backend_urlなど）を設定でき、統合リクエストで参照することで環境ごとにバックエンドを切り替えられる。\n\n" +
+    "■B: マッピングテンプレートはペイロード変換であり、URL切り替えには使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:153, category:"DynamoDB",
+  question:"DynamoDBで大量の読み取りが発生している。キャッシュを使ってレイテンシを下げたい。最適な選択はどれか？",
+  options:[
+    "A. DAXを導入する",
+    "B. RCUを減らす",
+    "C. テーブルを複数に分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: DAXはインメモリキャッシュであり、読み取り中心のワークロードに最適。レイテンシとコストの両面で有利。\n\n" +
+    "■B: RCU減少はスロットリング増加につながり逆効果。\n\n" +
+    "■C: テーブル分割は複雑化するだけで、読み取りレイテンシ改善には直結しない。\n\n" +
+    "■D: TTLは期限削除の話であり、読み取りレイテンシとは無関係。"
+},
+
+{
+  id:154, category:"SQS",
+  question:"SQS FIFOキューで特定ユーザーの注文イベントを順序通りに処理したい。最適なメッセージグループID設計はどれか？",
+  options:[
+    "A. ユーザーIDをメッセージグループIDにする",
+    "B. ランダムUUIDを設定する",
+    "C. 固定値を設定する",
+    "D. メッセージグループIDを空にする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ユーザーIDをグループIDにすると、ユーザー単位で順序保証される。注文イベント処理に最適。\n\n" +
+    "■B: ランダムUUIDでは同一ユーザーのイベントが分散し順序保証が失われる。\n\n" +
+    "■C: 固定値は全メッセージが同一グループになり、スループットが極端に低下。\n\n" +
+    "■D: FIFOではグループIDは必須であり空にはできない。"
+},
+
+{
+  id:155, category:"Step Functions",
+  question:"Step Functionsで外部API呼び出しが失敗した場合に補償処理を行いたい。最適な方法はどれか？",
+  options:[
+    "A. Retryで再試行回数を増やす",
+    "B. Catchで補償ステートへ遷移する",
+    "C. Lambda内でtry-catchを実装する",
+    "D. CloudWatchアラームで再実行する"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■A: Retryは再試行のみで補償処理ではない。\n\n" +
+    "■B: Catchで補償ステートへ遷移するのが正しい。サガパターン的設計で、DVA試験頻出。\n\n" +
+    "■C: Lambda内try-catchだけではワークフロー全体の補償ができない。\n\n" +
+    "■D: CloudWatchアラームで手動補償は非効率。"
+},
+
+{
+  id:156, category:"EventBridge",
+  question:"EventBridgeで特定イベントを複数ターゲットに配信したい。最適な構成はどれか？",
+  options:[
+    "A. 複数ターゲットを持つEventBridgeルールを作成する",
+    "B. SNSに送信してサブスクライバー側で分岐する",
+    "C. Lambdaで分岐処理を実装する",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールは複数ターゲットを持てるため、同じイベントを複数サービスに直接配信できる。\n\n" +
+    "■B: SNS経由は冗長。\n\n" +
+    "■C: Lambdaで分岐は過剰設計。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:157, category:"IAM",
+  question:"開発者が誤って本番環境のリソースを削除しないようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. 本番タグ付きリソースに対する削除系アクションをDenyする",
+    "B. すべての権限を付与する",
+    "C. ルートユーザーで操作させる",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: タグ条件（Environment=Prod）で Delete 系アクションを拒否するのが誤削除防止の王道。\n\n" +
+    "■B: フル権限は危険。\n\n" +
+    "■C: ルートユーザー操作は最悪。\n\n" +
+    "■D: Logs無効化は監査性低下。"
+},
+
+{
+  id:158, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:159, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store を使うことで、環境ごとに異なる設定値を安全に管理し、CodePipelineやCodeBuildで参照できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:160, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:161, category:"Lambda",
+  question:"Lambda関数が大量のリクエストを処理しており、処理時間がばらつく。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. CloudWatch Logsの保持期間",
+    "D. VPCのCIDRブロック"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、処理時間の安定性に直結する。まずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: Logs保持期間はコストの話であり、処理時間とは無関係。\n\n" +
+    "■D: VPC CIDRはネットワーク設計の話。"
+},
+
+{
+  id:162, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスを加工して返したい。最適な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:163, category:"DynamoDB",
+  question:"DynamoDBで別属性をキーに検索したい。既存PKは変更したくない。最適な機能はどれか？",
+  options:[
+    "A. GSI",
+    "B. LSI",
+    "C. TTL",
+    "D. Streams"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: GSIは別のPK/SKを持てるため、既存テーブルのPKを変えずに検索機能を拡張できる。\n\n" +
+    "■B: LSIはPKを共有するため、別属性をPKにした検索には使えない。\n\n" +
+    "■C: TTLは期限削除の話。\n\n" +
+    "■D: Streamsはイベント通知の話。"
+},
+
+{
+  id:164, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを0にする",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:165, category:"Step Functions",
+  question:"Step Functionsで配列要素ごとに処理を行いたい。最適なステートはどれか？",
+  options:[
+    "A. Mapステート",
+    "B. Parallelステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Mapは配列要素ごとの繰り返し処理に最適。並列化も可能。\n\n" +
+    "■B: Parallelは異なる処理フローの並列実行。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:166, category:"EventBridge",
+  question:"EventBridgeで特定イベントをフィルタしてターゲットに送信したい。最適な方法はどれか？",
+  options:[
+    "A. イベントパターンを指定したルールを作成する",
+    "B. すべてのイベントをLambdaで受けてフィルタする",
+    "C. SNSに送信してサブスクライバー側でフィルタする",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールのイベントパターンでフィルタするのが最も効率的で疎結合。\n\n" +
+    "■B: Lambdaでフィルタすると不要なイベントまでLambdaが起動しコスト増。\n\n" +
+    "■C: SNS側フィルタは冗長。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:167, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで images/ 以下のみ読み取り可能にできる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:168, category:"CloudWatch",
+  question:"Lambda関数のエラー率が急増している。まず確認すべきメトリクスはどれか？",
+  options:[
+    "A. Errors",
+    "B. Duration",
+    "C. Throttles",
+    "D. IteratorAge"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Errors は失敗回数を示す最重要メトリクス。\n\n" +
+    "■B: Duration は処理時間であり、エラー率とは別。\n\n" +
+    "■C: Throttles は同時実行数制限の話。\n\n" +
+    "■D: IteratorAge はストリーム遅延の話。"
+},
+
+{
+  id:169, category:"CI/CD",
+  question:"SAMを使ったサーバレスアプリケーションを複数環境（dev/stg/prod）にデプロイしたい。最適な方法はどれか？",
+  options:[
+    "A. 環境ごとに別のスタック名・パラメータで sam deploy を実行する",
+    "B. すべて同じスタック名で上書きデプロイする",
+    "C. Lambdaコンソールで手動デプロイする",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SAMはCloudFormationスタックとしてデプロイされるため、環境ごとにスタック名やパラメータを変えるのが正しい運用。\n\n" +
+    "■B: 同じスタック名では環境が分離できない。\n\n" +
+    "■C: 手動デプロイはCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけではスタック更新が行われない。"
+},
+
+{
+  id:170, category:"X-Ray",
+  question:"X-RayでLambda内の特定処理ブロック（DBアクセスなど）を詳細に可視化したい。最適な方法はどれか？",
+  options:[
+    "A. X-Ray SDKでサブセグメントを作成する",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与するだけにする",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: サブセグメントを作成することで特定処理のレイテンシを詳細に可視化できる。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけではサブセグメントは作られない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:171, category:"Lambda",
+  question:"Lambda関数がS3バケット内の大量オブジェクトを一括処理する必要がある。1回のLambda実行で全オブジェクトを処理するとタイムアウトする。最適な設計はどれか？",
+  options:[
+    "A. Step Functionsでオブジェクト一覧を分割し、Lambdaでバッチ処理する",
+    "B. Lambdaのタイムアウトを最大値まで延長する",
+    "C. EC2インスタンスで処理する",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Step Functionsでチャンク分割し、Lambdaで小分け処理するのがサーバレスの王道。長時間処理に最適。\n\n" +
+    "■B: タイムアウト延長は限界があり、根本解決にならない。\n\n" +
+    "■C: EC2は運用負荷が高く、サーバレス要件に合わない。\n\n" +
+    "■D: Logs無効化は監視能力低下。"
+},
+
+{
+  id:172, category:"API Gateway",
+  question:"API Gatewayで特定クライアントにだけアクセスを許可したい（IPではなくAPIキー）。最適な方法はどれか？",
+  options:[
+    "A. APIキーを発行し、使用量プランに紐付ける",
+    "B. WAFでIPアドレスを許可する",
+    "C. CloudFrontでオリジンアクセス制御を設定する",
+    "D. LambdaオーソライザーでIPチェックを行う"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: APIキー＋使用量プランはクライアント識別の標準機能。APIキーを持つクライアントだけがアクセス可能。\n\n" +
+    "■B: IPベースの制御であり、APIキー要件とは異なる。\n\n" +
+    "■C: CloudFront OACはS3オリジン制御の話。\n\n" +
+    "■D: LambdaオーソライザーでIPチェックは可能だが、APIキー要件に対して過剰設計。"
+},
+
+{
+  id:173, category:"DynamoDB",
+  question:"DynamoDBでユーザーごとの最新イベントを高速に取得したい。最適なキー設計はどれか？",
+  options:[
+    "A. PKにユーザーID、SKにイベント時刻を設定する",
+    "B. PKにイベント時刻、SKにユーザーIDを設定する",
+    "C. PKにランダムUUIDのみを設定する",
+    "D. PKに固定値を設定し、SKにユーザーIDを設定する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: PK=ユーザーID、SK=イベント時刻とすることで、ユーザー単位のイベント履歴を時系列で格納できる。最新イベントはSK降順で1件取得するだけで高速に取得できる。\n\n" +
+    "■B: PK=イベント時刻だとユーザー単位の取得が困難。\n\n" +
+    "■C: ランダムUUIDではユーザー単位のグルーピングができずスキャンが必要。\n\n" +
+    "■D: PK固定値は全アイテムが同一パーティションに集まりホットパーティションになる。"
+},
+
+{
+  id:174, category:"SQS",
+  question:"SQS FIFOキューでスループットを最大化したい。最も重要な設定はどれか？",
+  options:[
+    "A. メッセージグループIDを増やす",
+    "B. Visibility Timeoutを短くする",
+    "C. Delay Secondsを増やす",
+    "D. キューを標準キューに変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: FIFOはメッセージグループID単位で順序保証されるため、グループ数を増やすと並列度が上がりスループットが向上する。\n\n" +
+    "■B: Visibility Timeoutはスループットとは無関係。\n\n" +
+    "■C: Delay Secondsは遅延の話。\n\n" +
+    "■D: 標準キューにすると順序保証が失われる。"
+},
+
+{
+  id:175, category:"Step Functions",
+  question:"Step Functionsで複数の独立した処理フローを同時に実行したい。最適なステートはどれか？",
+  options:[
+    "A. Parallelステート",
+    "B. Mapステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Parallelステートは複数ブランチを並列に実行できる。独立フローの同時実行に最適。\n\n" +
+    "■B: Mapは配列要素の繰り返し処理。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:176, category:"EventBridge",
+  question:"EventBridgeでイベントを別アカウントに転送したい。最適な方法はどれか？",
+  options:[
+    "A. イベントバスのルーティング",
+    "B. SNSサブスクリプション",
+    "C. SQSキュー共有",
+    "D. Lambdaで転送処理を実装する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはイベントバス間ルーティングをネイティブにサポートしており、最もシンプルで安全。\n\n" +
+    "■B: SNSでも可能だが冗長。\n\n" +
+    "■C: SQS共有は用途が異なる。\n\n" +
+    "■D: Lambdaで転送は過剰設計。"
+},
+
+{
+  id:177, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（logs/）にのみ書き込みできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:PutObject を arn:aws:s3:::my-bucket/logs/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:PutObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで logs/ 以下への書き込みのみを許可できる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:178, category:"CloudWatch",
+  question:"API Gatewayのバックエンド統合部分の遅延のみを監視したい。最適なメトリクスはどれか？",
+  options:[
+    "A. Latency",
+    "B. IntegrationLatency",
+    "C. 4XXError",
+    "D. 5XXError"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■A: Latency は全体レイテンシであり、バックエンド遅延だけを見たい場合には不適。\n\n" +
+    "■B: IntegrationLatency はバックエンド統合部分のレイテンシのみを示す。\n\n" +
+    "■C/D: エラー率の話であり、遅延監視とは無関係。"
+},
+
+{
+  id:179, category:"CI/CD",
+  question:"CodePipelineでソース変更時に自動的にLambdaを更新したい。最適な構成はどれか？",
+  options:[
+    "A. ソース→CodeBuild→CodeDeploy のパイプラインを構成する",
+    "B. ソースステージのみを設定する",
+    "C. CodeBuildのみを使う",
+    "D. CloudFormationのみを使う"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: CodePipelineが全体をオーケストレーションし、ビルドはCodeBuild、デプロイはCodeDeployが担当する。自動更新の王道。\n\n" +
+    "■B: ソースステージだけでは更新されない。\n\n" +
+    "■C: CodeBuildのみではデプロイできない。\n\n" +
+    "■D: CloudFormation単体ではソース変更検知ができない。"
+},
+
+{
+  id:180, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:181, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、時々タイムアウトする。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり、根本解決にならない。\n\n" +
+    "■C: IAM権限はタイムアウトとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:182, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスを加工して返したい。最適な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:183, category:"DynamoDB",
+  question:"DynamoDBで大量の書き込みが発生している。スロットリングを避けたい場合の最適な対策はどれか？",
+  options:[
+    "A. 書き込みをバッチ化して BatchWriteItem を使う",
+    "B. WCUを減らす",
+    "C. テーブルを複数に分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: BatchWriteItem は複数書き込みをまとめて送信でき、効率的にスループットを使える。スロットリング回避に有効。\n\n" +
+    "■B: WCU減少は逆効果。\n\n" +
+    "■C: テーブル分割は複雑化し、根本解決にならない。\n\n" +
+    "■D: TTLは期限削除の話であり、書き込みスロットリングとは無関係。"
+},
+
+{
+  id:184, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを増やす",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:185, category:"Step Functions",
+  question:"Step Functionsで外部API呼び出しが失敗した場合に補償処理を行いたい。最適な方法はどれか？",
+  options:[
+    "A. Retryで再試行回数を増やす",
+    "B. Catchで補償ステートへ遷移する",
+    "C. Lambda内でtry-catchを実装する",
+    "D. CloudWatchアラームで再実行する"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■A: Retryは再試行のみで補償処理ではない。\n\n" +
+    "■B: Catchで補償ステートへ遷移するのが正しい。サガパターン的設計で、DVA試験頻出。\n\n" +
+    "■C: Lambda内try-catchだけではワークフロー全体の補償ができない。\n\n" +
+    "■D: CloudWatchアラームで手動補償は非効率。"
+},
+
+{
+  id:186, category:"EventBridge",
+  question:"EventBridgeで特定イベントを複数ターゲットに配信したい。最適な構成はどれか？",
+  options:[
+    "A. 複数ターゲットを持つEventBridgeルールを作成する",
+    "B. SNSに送信してサブスクライバー側で分岐する",
+    "C. Lambdaで分岐処理を実装する",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールは複数ターゲットを持てるため、同じイベントを複数サービスに直接配信できる。\n\n" +
+    "■B: SNS経由は冗長。\n\n" +
+    "■C: Lambdaで分岐は過剰設計。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:187, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで images/ 以下のみ読み取り可能にできる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:188, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:189, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store を使うことで、環境ごとに異なる設定値を安全に管理し、CodePipelineやCodeBuildで参照できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:190, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:191, category:"Lambda",
+  question:"Lambda関数が大量のリクエストを処理しており、同時実行数が急増してバックエンドが過負荷になっている。最適な対策はどれか？",
+  options:[
+    "A. Lambdaの最大同時実行数を制限する",
+    "B. Lambdaのタイムアウトを延長する",
+    "C. メモリを減らす",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaのreserved concurrencyで同時実行数を制限することで、バックエンドの許容量に合わせてスループットを制御できる。SQS連携でも頻出のベストプラクティス。\n\n" +
+    "■B: タイムアウト延長は過負荷問題の解決にならず、むしろリソース占有時間が増えて悪化する。\n\n" +
+    "■C: メモリ減少はCPU性能低下につながり逆効果。\n\n" +
+    "■D: Logs無効化は監視能力低下であり、過負荷問題とは無関係。"
+},
+
+{
+  id:192, category:"API Gateway",
+  question:"API Gatewayでバックエンドのレスポンスをキャッシュし、読み取り負荷を減らしたい。最適な機能はどれか？",
+  options:[
+    "A. API Gatewayキャッシュ",
+    "B. CloudFrontキャッシュ",
+    "C. Lambda内のグローバル変数キャッシュ",
+    "D. DynamoDBにキャッシュテーブルを作る"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: API Gatewayはステージごとにレスポンスキャッシュ機能を提供し、TTLやキー設定も可能。APIレイヤーでのキャッシュとして最適。\n\n" +
+    "■B: CloudFrontは静的コンテンツ向けであり、API Gatewayのネイティブキャッシュが使える状況ではそちらが優先。\n\n" +
+    "■C: Lambda内キャッシュはコンテナ再利用時のみ有効で不安定。\n\n" +
+    "■D: DynamoDBキャッシュは過剰設計。"
+},
+
+{
+  id:193, category:"DynamoDB",
+  question:"DynamoDBで別属性をキーに検索したい。既存PKは変更したくない。最適な機能はどれか？",
+  options:[
+    "A. GSI",
+    "B. LSI",
+    "C. TTL",
+    "D. Streams"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: GSIは別のPK/SKを持てるため、既存テーブルのPKを変えずに検索機能を拡張できる。\n\n" +
+    "■B: LSIはPKを共有するため、別属性をPKにした検索には使えない。\n\n" +
+    "■C: TTLは期限削除の話。\n\n" +
+    "■D: Streamsはイベント通知の話。"
+},
+
+{
+  id:194, category:"SQS",
+  question:"SQS FIFOキューで特定ユーザーの注文イベントを順序通りに処理したい。最適なメッセージグループID設計はどれか？",
+  options:[
+    "A. ユーザーIDをメッセージグループIDにする",
+    "B. ランダムUUIDを設定する",
+    "C. 固定値を設定する",
+    "D. メッセージグループIDを空にする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ユーザーIDをグループIDにすると、ユーザー単位で順序保証される。注文イベント処理に最適。\n\n" +
+    "■B: ランダムUUIDでは同一ユーザーのイベントが分散し順序保証が失われる。\n\n" +
+    "■C: 固定値は全メッセージが同一グループになり、スループットが極端に低下。\n\n" +
+    "■D: FIFOではグループIDは必須であり空にはできない。"
+},
+
+{
+  id:195, category:"Step Functions",
+  question:"Step Functionsで複数の独立した処理フローを同時に実行したい。最適なステートはどれか？",
+  options:[
+    "A. Parallelステート",
+    "B. Mapステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Parallelステートは複数ブランチを並列に実行できる。独立フローの同時実行に最適。\n\n" +
+    "■B: Mapは配列要素の繰り返し処理。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:196, category:"EventBridge",
+  question:"EventBridgeでイベントを別アカウントに転送したい。最適な方法はどれか？",
+  options:[
+    "A. イベントバスのルーティング",
+    "B. SNSサブスクリプション",
+    "C. SQSキュー共有",
+    "D. Lambdaで転送処理を実装する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはイベントバス間ルーティングをネイティブにサポートしており、最もシンプルで安全。\n\n" +
+    "■B: SNSでも可能だが冗長。\n\n" +
+    "■C: SQS共有は用途が異なる。\n\n" +
+    "■D: Lambdaで転送は過剰設計。"
+},
+
+{
+  id:197, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（logs/）にのみ書き込みできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:PutObject を arn:aws:s3:::my-bucket/logs/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:PutObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで logs/ 以下への書き込みのみを許可できる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:198, category:"CloudWatch",
+  question:"API Gatewayのバックエンド統合部分の遅延のみを監視したい。最適なメトリクスはどれか？",
+  options:[
+    "A. Latency",
+    "B. IntegrationLatency",
+    "C. 4XXError",
+    "D. 5XXError"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■A: Latency は全体レイテンシであり、バックエンド遅延だけを見たい場合には不適。\n\n" +
+    "■B: IntegrationLatency はバックエンド統合部分のレイテンシのみを示す。\n\n" +
+    "■C/D: エラー率の話であり、遅延監視とは無関係。"
+},
+
+{
+  id:199, category:"CI/CD",
+  question:"CodePipelineでソース変更時に自動的にLambdaを更新したい。最適な構成はどれか？",
+  options:[
+    "A. ソース→CodeBuild→CodeDeploy のパイプラインを構成する",
+    "B. ソースステージのみを設定する",
+    "C. CodeBuildのみを使う",
+    "D. CloudFormationのみを使う"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: CodePipelineが全体をオーケストレーションし、ビルドはCodeBuild、デプロイはCodeDeployが担当する。自動更新の王道。\n\n" +
+    "■B: ソースステージだけでは更新されない。\n\n" +
+    "■C: CodeBuildのみではデプロイできない。\n\n" +
+    "■D: CloudFormation単体ではソース変更検知ができない。"
+},
+
+{
+  id:200, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:201, category:"Lambda",
+  question:"Lambda関数がVPC内で実行されており、ENI作成によるコールドスタートが頻発している。最適な対策はどれか？",
+  options:[
+    "A. RDS Proxyを利用する",
+    "B. VPCのCIDRを広げる",
+    "C. NAT Gatewayを増やす",
+    "D. CloudWatch Logsを削除する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: RDS ProxyはDB接続プールを提供し、ENI作成によるコールドスタートの影響を大幅に軽減する。VPC内Lambdaのベストプラクティス。\n\n" +
+    "■B: CIDR拡張はIP枯渇対策であり、ENI作成速度とは無関係。\n\n" +
+    "■C: NAT Gateway増設は外部通信の話で、コールドスタートとは無関係。\n\n" +
+    "■D: Logs削除は監視能力が落ちるだけ。"
+},
+
+{
+  id:202, category:"API Gateway",
+  question:"API Gatewayでクライアントごとに異なるレート制限を設定したい。最適な構成はどれか？",
+  options:[
+    "A. 使用量プランを複数作成しAPIキーを紐付ける",
+    "B. WAFレートベースルールを使う",
+    "C. Lambdaオーソライザーでレート制限を自前実装する",
+    "D. CloudFrontキャッシュを増やす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 使用量プラン＋APIキーはクライアント単位のレート制限をネイティブに提供する。無料・有料プランの差別化に最適。\n\n" +
+    "■B: WAFはIP単位であり、クライアント単位ではない。\n\n" +
+    "■C: 自前実装は複雑で非推奨。\n\n" +
+    "■D: CloudFrontキャッシュはレート制限とは無関係。"
+},
+
+{
+  id:203, category:"DynamoDB",
+  question:"DynamoDBでホットパーティションが発生している。根本的な対策はどれか？",
+  options:[
+    "A. パーティションキー設計を見直し分散させる",
+    "B. RCU/WCUを増やす",
+    "C. LSIを追加する",
+    "D. Streamsを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ホットパーティションはキー設計が原因。アクセスを均等分散させるのが唯一の根本対策。\n\n" +
+    "■B: RCU/WCU増加は応急処置であり、負荷集中は解決しない。\n\n" +
+    "■C: LSIはPKを共有するため負荷分散にはならない。\n\n" +
+    "■D: Streamsはイベント通知であり、負荷分散とは無関係。"
+},
+
+{
+  id:204, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを増やす",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:205, category:"Step Functions",
+  question:"Step Functionsで外部API呼び出しが失敗した場合に補償処理を行いたい。最適な方法はどれか？",
+  options:[
+    "A. Retryで再試行回数を増やす",
+    "B. Catchで補償ステートへ遷移する",
+    "C. Lambda内でtry-catchを実装する",
+    "D. CloudWatchアラームで再実行する"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■A: Retryは再試行のみで補償処理ではない。\n\n" +
+    "■B: Catchで補償ステートへ遷移するのが正しい。サガパターン的設計で、DVA試験頻出。\n\n" +
+    "■C: Lambda内try-catchだけではワークフロー全体の補償ができない。\n\n" +
+    "■D: CloudWatchアラームで手動補償は非効率。"
+},
+
+{
+  id:206, category:"EventBridge",
+  question:"EventBridgeで特定イベントを複数ターゲットに配信したい。最適な構成はどれか？",
+  options:[
+    "A. 複数ターゲットを持つEventBridgeルールを作成する",
+    "B. SNSに送信してサブスクライバー側で分岐する",
+    "C. Lambdaで分岐処理を実装する",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールは複数ターゲットを持てるため、同じイベントを複数サービスに直接配信できる。\n\n" +
+    "■B: SNS経由は冗長。\n\n" +
+    "■C: Lambdaで分岐は過剰設計。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:207, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで images/ 以下のみ読み取り可能にできる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:208, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:209, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store を使うことで、環境ごとに異なる設定値を安全に管理し、CodePipelineやCodeBuildで参照できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:210, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:211, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、レイテンシが大きくばらつく。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり、根本解決にならない。\n\n" +
+    "■C: IAM権限はレイテンシとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:212, category:"API Gateway",
+  question:"API Gatewayでステージごとに異なるバックエンドURLを使いたい。最適な機能はどれか？",
+  options:[
+    "A. ステージ変数",
+    "B. マッピングテンプレート",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ステージ変数はステージごとに異なる値（backend_urlなど）を設定でき、統合リクエストで参照することで環境ごとにバックエンドを切り替えられる。\n\n" +
+    "■B: マッピングテンプレートはペイロード変換であり、URL切り替えには使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:213, category:"DynamoDB",
+  question:"DynamoDBで読み取り頻度が高く、更新が少ないデータを高速に取得したい。最適な構成はどれか？",
+  options:[
+    "A. DAXを導入する",
+    "B. RCUを減らす",
+    "C. テーブルを分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: DAXはインメモリキャッシュであり、読み取り中心のワークロードに最適。レイテンシとコストの両面で有利。\n\n" +
+    "■B: RCU減少はスロットリング増加につながり逆効果。\n\n" +
+    "■C: テーブル分割は複雑化するだけで、レイテンシ改善には直結しない。\n\n" +
+    "■D: TTLは期限削除の話であり、読み取りレイテンシとは無関係。"
+},
+
+{
+  id:214, category:"SQS",
+  question:"SQS FIFOキューでスループットを最大化したい。最も重要な設定はどれか？",
+  options:[
+    "A. メッセージグループIDを増やす",
+    "B. Visibility Timeoutを短くする",
+    "C. Delay Secondsを増やす",
+    "D. キューを標準キューに変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: FIFOはメッセージグループID単位で順序保証されるため、グループ数を増やすと並列度が上がりスループットが向上する。\n\n" +
+    "■B: Visibility Timeoutはスループットとは無関係。\n\n" +
+    "■C: Delay Secondsは遅延の話。\n\n" +
+    "■D: 標準キューにすると順序保証が失われる。"
+},
+
+{
+  id:215, category:"Step Functions",
+  question:"Step Functionsで複数の独立した処理フローを同時に実行したい。最適なステートはどれか？",
+  options:[
+    "A. Parallelステート",
+    "B. Mapステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Parallelステートは複数ブランチを並列に実行できる。独立フローの同時実行に最適。\n\n" +
+    "■B: Mapは配列要素の繰り返し処理。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:216, category:"EventBridge",
+  question:"EventBridgeでイベントを別アカウントに転送したい。最適な方法はどれか？",
+  options:[
+    "A. イベントバスのルーティング",
+    "B. SNSサブスクリプション",
+    "C. SQSキュー共有",
+    "D. Lambdaで転送処理を実装する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはイベントバス間ルーティングをネイティブにサポートしており、最もシンプルで安全。\n\n" +
+    "■B: SNSでも可能だが冗長。\n\n" +
+    "■C: SQS共有は用途が異なる。\n\n" +
+    "■D: Lambdaで転送は過剰設計。"
+},
+
+{
+  id:217, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（logs/）にのみ書き込みできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:PutObject を arn:aws:s3:::my-bucket/logs/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:PutObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで logs/ 以下への書き込みのみを許可できる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:218, category:"CloudWatch",
+  question:"Lambda関数のエラー率が急増している。まず確認すべきメトリクスはどれか？",
+  options:[
+    "A. Errors",
+    "B. Duration",
+    "C. Throttles",
+    "D. IteratorAge"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Errors は失敗回数を示す最重要メトリクス。\n\n" +
+    "■B: Duration は処理時間であり、エラー率とは別。\n\n" +
+    "■C: Throttles は同時実行数制限の話。\n\n" +
+    "■D: IteratorAge はストリーム遅延の話。"
+},
+
+{
+  id:219, category:"CI/CD",
+  question:"SAMを使ったサーバレスアプリケーションを複数環境（dev/stg/prod）にデプロイしたい。最適な方法はどれか？",
+  options:[
+    "A. 環境ごとに別のスタック名・パラメータで sam deploy を実行する",
+    "B. すべて同じスタック名で上書きデプロイする",
+    "C. Lambdaコンソールで手動デプロイする",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SAMはCloudFormationスタックとしてデプロイされるため、環境ごとにスタック名やパラメータを変えるのが正しい運用。\n\n" +
+    "■B: 同じスタック名では環境が分離できない。\n\n" +
+    "■C: 手動デプロイはCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけではスタック更新が行われない。"
+},
+
+{
+  id:220, category:"X-Ray",
+  question:"X-RayでLambda内の特定処理ブロック（DBアクセスなど）を詳細に可視化したい。最適な方法はどれか？",
+  options:[
+    "A. X-Ray SDKでサブセグメントを作成する",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与するだけにする",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: サブセグメントを作成することで特定処理のレイテンシを詳細に可視化できる。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけではサブセグメントは作られない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:221, category:"Lambda",
+  question:"Lambda関数が大量のリクエストを処理しており、処理時間がばらつく。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. CloudWatch Logsの保持期間",
+    "D. VPCのCIDRブロック"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、処理時間の安定性に直結する。まずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: Logs保持期間は処理時間とは無関係。\n\n" +
+    "■D: VPC CIDRはネットワーク設計の話。"
+},
+
+{
+  id:222, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスを加工して返したい。最適な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:223, category:"DynamoDB",
+  question:"DynamoDBで別属性をキーに検索したい。既存PKは変更したくない。最適な機能はどれか？",
+  options:[
+    "A. GSI",
+    "B. LSI",
+    "C. TTL",
+    "D. Streams"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: GSIは別のPK/SKを持てるため、既存テーブルのPKを変えずに検索機能を拡張できる。\n\n" +
+    "■B: LSIはPKを共有するため、別属性をPKにした検索には使えない。\n\n" +
+    "■C: TTLは期限削除の話。\n\n" +
+    "■D: Streamsはイベント通知の話。"
+},
+
+{
+  id:224, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを増やす",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:225, category:"Step Functions",
+  question:"Step Functionsで配列要素ごとに処理を行いたい。最適なステートはどれか？",
+  options:[
+    "A. Mapステート",
+    "B. Parallelステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Mapは配列要素ごとの繰り返し処理に最適。並列化も可能。\n\n" +
+    "■B: Parallelは異なる処理フローの並列実行。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:226, category:"EventBridge",
+  question:"EventBridgeで特定イベントをフィルタしてターゲットに送信したい。最適な方法はどれか？",
+  options:[
+    "A. イベントパターンを指定したルールを作成する",
+    "B. すべてのイベントをLambdaで受けてフィルタする",
+    "C. SNSに送信してサブスクライバー側でフィルタする",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールのイベントパターンでフィルタするのが最も効率的で疎結合。\n\n" +
+    "■B: Lambdaでフィルタすると不要なイベントまでLambdaが起動しコスト増。\n\n" +
+    "■C: SNS側フィルタは冗長。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:227, category:"IAM",
+  question:"開発者が誤って本番環境のリソースを削除しないようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. 本番タグ付きリソースに対する削除系アクションをDenyする",
+    "B. すべての権限を付与する",
+    "C. ルートユーザーで操作させる",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: タグ条件（Environment=Prod）で Delete 系アクションを拒否するのが誤削除防止の王道。\n\n" +
+    "■B: フル権限は危険。\n\n" +
+    "■C: ルートユーザー操作は最悪。\n\n" +
+    "■D: Logs無効化は監査性低下。"
+},
+
+{
+  id:228, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:229, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store を使うことで、環境ごとに異なる設定値を安全に管理し、CodePipelineやCodeBuildで参照できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:230, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:231, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、時々タイムアウトする。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり、根本解決にならない。\n\n" +
+    "■C: IAM権限はタイムアウトとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:232, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスを加工して返したい。最適な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:233, category:"DynamoDB",
+  question:"DynamoDBで大量の読み取りが発生している。キャッシュを使ってレイテンシを下げたい。最適な選択はどれか？",
+  options:[
+    "A. DAXを導入する",
+    "B. RCUを減らす",
+    "C. テーブルを複数に分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: DAXはインメモリキャッシュであり、読み取り中心のワークロードに最適。レイテンシとコストの両面で有利。\n\n" +
+    "■B: RCU減少はスロットリング増加につながり逆効果。\n\n" +
+    "■C: テーブル分割は複雑化するだけで、読み取りレイテンシ改善には直結しない。\n\n" +
+    "■D: TTLは期限削除の話であり、読み取りレイテンシとは無関係。"
+},
+
+{
+  id:234, category:"SQS",
+  question:"SQS FIFOキューで特定ユーザーの注文イベントを順序通りに処理したい。最適なメッセージグループID設計はどれか？",
+  options:[
+    "A. ユーザーIDをメッセージグループIDにする",
+    "B. ランダムUUIDを設定する",
+    "C. 固定値を設定する",
+    "D. メッセージグループIDを空にする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ユーザーIDをグループIDにすると、ユーザー単位で順序保証される。注文イベント処理に最適。\n\n" +
+    "■B: ランダムUUIDでは同一ユーザーのイベントが分散し順序保証が失われる。\n\n" +
+    "■C: 固定値は全メッセージが同一グループになり、スループットが極端に低下。\n\n" +
+    "■D: FIFOではグループIDは必須であり空にはできない。"
+},
+
+{
+  id:235, category:"Step Functions",
+  question:"Step Functionsで外部API呼び出しが失敗した場合に補償処理を行いたい。最適な方法はどれか？",
+  options:[
+    "A. Retryで再試行回数を増やす",
+    "B. Catchで補償ステートへ遷移する",
+    "C. Lambda内でtry-catchを実装する",
+    "D. CloudWatchアラームで再実行する"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■B: Catchで補償ステートへ遷移するのが正しい。サガパターン的設計で、DVA試験頻出。\n\n" +
+    "■A: Retryは再試行のみで補償処理ではない。\n\n" +
+    "■C: Lambda内try-catchだけではワークフロー全体の補償ができない。\n\n" +
+    "■D: CloudWatchアラームで手動補償は非効率。"
+},
+
+{
+  id:236, category:"EventBridge",
+  question:"EventBridgeで特定イベントを複数ターゲットに配信したい。最適な構成はどれか？",
+  options:[
+    "A. 複数ターゲットを持つEventBridgeルールを作成する",
+    "B. SNSに送信してサブスクライバー側で分岐する",
+    "C. Lambdaで分岐処理を実装する",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールは複数ターゲットを持てるため、同じイベントを複数サービスに直接配信できる。\n\n" +
+    "■B: SNS経由は冗長。\n\n" +
+    "■C: Lambdaで分岐は過剰設計。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:237, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: プレフィックス付きARNを指定することで images/ 以下のみ読み取り可能にできる。最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはセキュリティのアンチパターン。"
+},
+
+{
+  id:238, category:"CloudWatch",
+  question:"Lambda関数のエラー率が急増している。まず確認すべきメトリクスはどれか？",
+  options:[
+    "A. Errors",
+    "B. Duration",
+    "C. Throttles",
+    "D. IteratorAge"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Errors は失敗回数を示す最重要メトリクス。\n\n" +
+    "■B: Duration は処理時間であり、エラー率とは別。\n\n" +
+    "■C: Throttles は同時実行数制限の話。\n\n" +
+    "■D: IteratorAge はストリーム遅延の話。"
+},
+
+{
+  id:239, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store を使うことで、環境ごとに異なる設定値を安全に管理し、CodePipelineやCodeBuildで参照できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:240, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: X-Ray SDKでHTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:241, category:"Lambda",
+  question:"Lambda関数が大量のリクエストを処理しており、処理時間がばらつく。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. CloudWatch Logsの保持期間",
+    "D. VPCのCIDRブロック"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Lambdaはメモリ設定に応じてCPU性能も比例して増減するため、処理時間の安定性に直結する。まずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: Logs保持期間は処理時間とは無関係。\n\n" +
+    "■D: VPC CIDRはネットワーク設計の話。"
+},
+
+{
+  id:242, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスをキャッシュし、読み取り負荷を減らしたい。最適な機能はどれか？",
+  options:[
+    "A. API Gatewayキャッシュ",
+    "B. CloudFrontキャッシュ",
+    "C. Lambda内キャッシュ",
+    "D. DynamoDBキャッシュテーブル"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: API Gatewayはステージごとにレスポンスキャッシュ機能を提供し、TTLやキー設定も可能。\n\n" +
+    "■B: CloudFrontは静的コンテンツ向け。\n\n" +
+    "■C: Lambda内キャッシュはコンテナ再利用時のみ有効で不安定。\n\n" +
+    "■D: DynamoDBキャッシュは過剰設計。"
+},
+
+{
+  id:243, category:"DynamoDB",
+  question:"DynamoDBでユーザーごとの最新イベントを高速に取得したい。最適なキー設計はどれか？",
+  options:[
+    "A. PKにユーザーID、SKにイベント時刻を設定する",
+    "B. PKにイベント時刻、SKにユーザーIDを設定する",
+    "C. PKにランダムUUIDを設定する",
+    "D. PKに固定値を設定しSKにユーザーIDを設定する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ユーザー単位の時系列データ取得に最適。最新イベントはSK降順で1件取得するだけ。\n\n" +
+    "■B: PKが時刻だとユーザー単位の取得が困難。\n\n" +
+    "■C: ランダムUUIDはグルーピングできずスキャンが必要。\n\n" +
+    "■D: PK固定値はホットパーティションになる。"
+},
+
+{
+  id:244, category:"SQS",
+  question:"SQS FIFOキューでスループットを最大化したい。最も重要な設定はどれか？",
+  options:[
+    "A. メッセージグループIDを増やす",
+    "B. Visibility Timeoutを短くする",
+    "C. Delay Secondsを増やす",
+    "D. キューを標準キューに変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: グループIDを増やすと並列度が上がりスループット向上。\n\n" +
+    "■B: Visibility Timeoutはスループットとは無関係。\n\n" +
+    "■C: Delay Secondsは遅延の話。\n\n" +
+    "■D: 標準キューは順序保証が失われる。"
+},
+
+{
+  id:245, category:"Step Functions",
+  question:"Step Functionsで長時間処理を行う際、Lambdaコストを抑えたい。最適な方法はどれか？",
+  options:[
+    "A. サービス統合を使いLambdaを減らす",
+    "B. すべてLambdaで実装する",
+    "C. CloudWatch Logsを無効化する",
+    "D. X-Rayを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: AWS SDK統合でLambdaを使わずにサービス呼び出しできるため、長時間処理のコスト削減に最適。\n\n" +
+    "■B: 全Lambdaはコスト増。\n\n" +
+    "■C: Logs無効化は監視能力低下。\n\n" +
+    "■D: X-Ray無効化は可観測性低下。"
+},
+
+{
+  id:246, category:"EventBridge",
+  question:"EventBridgeでcron式を使って毎日Lambdaを起動したい。最適な設定はどれか？",
+  options:[
+    "A. EventBridgeルールでcron式を指定する",
+    "B. Lambdaのタイムアウトを増やす",
+    "C. SQSキューを使う",
+    "D. CloudWatch Logsでスケジュールする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはcron式をサポート。定期実行の王道。\n\n" +
+    "■B: タイムアウトは関係ない。\n\n" +
+    "■C: SQSはスケジュール機能を持たない。\n\n" +
+    "■D: Logsはスケジュール機能を持たない。"
+},
+
+{
+  id:247, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: images/ 以下のみ読み取り可能にできる。最小権限の原則。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはアンチパターン。"
+},
+
+{
+  id:248, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: メモリ設定に応じてCPU性能も増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:249, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store は環境ごとに異なる設定値を安全に管理できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:250, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: HTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:251, category:"Lambda",
+  question:"Lambda関数がVPC内で実行されており、ENI作成によるコールドスタートが頻発している。最適な対策はどれか？",
+  options:[
+    "A. RDS Proxyを利用する",
+    "B. VPCのCIDRを広げる",
+    "C. NAT Gatewayを増やす",
+    "D. CloudWatch Logsを削除する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: RDS ProxyはDB接続プールを提供し、ENI作成によるコールドスタートの影響を大幅に軽減する。\n\n" +
+    "■B: CIDR拡張はIP枯渇対策であり、ENI作成速度とは無関係。\n\n" +
+    "■C: NAT Gateway増設は外部通信の話で、コールドスタートとは無関係。\n\n" +
+    "■D: Logs削除は監視能力が落ちるだけ。"
+},
+
+{
+  id:252, category:"API Gateway",
+  question:"API Gatewayでクライアントごとに異なるレート制限を設定したい。最適な構成はどれか？",
+  options:[
+    "A. 使用量プランを複数作成しAPIキーを紐付ける",
+    "B. WAFレートベースルールを使う",
+    "C. Lambdaオーソライザーでレート制限を自前実装する",
+    "D. CloudFrontキャッシュを増やす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 使用量プラン＋APIキーはクライアント単位のレート制限をネイティブに提供する。\n\n" +
+    "■B: WAFはIP単位であり、クライアント単位ではない。\n\n" +
+    "■C: 自前実装は複雑で非推奨。\n\n" +
+    "■D: CloudFrontキャッシュはレート制限とは無関係。"
+},
+
+{
+  id:253, category:"DynamoDB",
+  question:"DynamoDBでホットパーティションが発生している。根本的な対策はどれか？",
+  options:[
+    "A. パーティションキー設計を見直し分散させる",
+    "B. RCU/WCUを増やす",
+    "C. LSIを追加する",
+    "D. Streamsを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ホットパーティションはキー設計が原因。アクセスを均等分散させるのが唯一の根本対策。\n\n" +
+    "■B: RCU/WCU増加は応急処置であり、負荷集中は解決しない。\n\n" +
+    "■C: LSIはPKを共有するため負荷分散にはならない。\n\n" +
+    "■D: Streamsはイベント通知であり、負荷分散とは無関係。"
+},
+
+{
+  id:254, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを増やす",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:255, category:"Step Functions",
+  question:"Step Functionsで配列要素ごとに処理を行いたい。最適なステートはどれか？",
+  options:[
+    "A. Mapステート",
+    "B. Parallelステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Mapは配列要素ごとの繰り返し処理に最適。並列化も可能。\n\n" +
+    "■B: Parallelは異なる処理フローの並列実行。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:256, category:"EventBridge",
+  question:"EventBridgeで特定イベントを複数ターゲットに配信したい。最適な構成はどれか？",
+  options:[
+    "A. 複数ターゲットを持つEventBridgeルールを作成する",
+    "B. SNSに送信してサブスクライバー側で分岐する",
+    "C. Lambdaで分岐処理を実装する",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールは複数ターゲットを持てるため、同じイベントを複数サービスに直接配信できる。\n\n" +
+    "■B: SNS経由は冗長。\n\n" +
+    "■C: Lambdaで分岐は過剰設計。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:257, category:"IAM",
+  question:"開発者が誤って本番環境のリソースを削除しないようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. 本番タグ付きリソースに対する削除系アクションをDenyする",
+    "B. すべての権限を付与する",
+    "C. ルートユーザーで操作させる",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: タグ条件（Environment=Prod）で Delete 系アクションを拒否するのが誤削除防止の王道。\n\n" +
+    "■B: フル権限は危険。\n\n" +
+    "■C: ルートユーザー操作は最悪。\n\n" +
+    "■D: Logs無効化は監査性低下。"
+},
+
+{
+  id:258, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: メモリ設定に応じてCPU性能も増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:259, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store は環境ごとに異なる設定値を安全に管理できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:260, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: HTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:261, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、レイテンシが大きくばらつく。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり根本解決ではない。\n\n" +
+    "■C: IAM権限はレイテンシとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:262, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスを加工して返したい。最適な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:263, category:"DynamoDB",
+  question:"DynamoDBで別属性をキーに検索したい。既存PKは変更したくない。最適な機能はどれか？",
+  options:[
+    "A. GSI",
+    "B. LSI",
+    "C. TTL",
+    "D. Streams"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: GSIは別のPK/SKを持てるため、既存テーブルのPKを変えずに検索機能を拡張できる。\n\n" +
+    "■B: LSIはPKを共有するため、別属性をPKにした検索には使えない。\n\n" +
+    "■C: TTLは期限削除の話。\n\n" +
+    "■D: Streamsはイベント通知の話。"
+},
+
+{
+  id:264, category:"SQS",
+  question:"SQS FIFOキューでスループットを最大化したい。最も重要な設定はどれか？",
+  options:[
+    "A. メッセージグループIDを増やす",
+    "B. Visibility Timeoutを短くする",
+    "C. Delay Secondsを増やす",
+    "D. キューを標準キューに変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: グループIDを増やすと並列度が上がりスループット向上。\n\n" +
+    "■B: Visibility Timeoutはスループットとは無関係。\n\n" +
+    "■C: Delay Secondsは遅延の話。\n\n" +
+    "■D: 標準キューは順序保証が失われる。"
+},
+
+{
+  id:265, category:"Step Functions",
+  question:"Step Functionsで外部API呼び出しが失敗した場合に補償処理を行いたい。最適な方法はどれか？",
+  options:[
+    "A. Retryで再試行回数を増やす",
+    "B. Catchで補償ステートへ遷移する",
+    "C. Lambda内でtry-catchを実装する",
+    "D. CloudWatchアラームで再実行する"
+  ],
+  answer:1,
+  explanation:
+    "正解はB。\n\n" +
+    "■B: Catchで補償ステートへ遷移するのが正しい。サガパターン的設計で試験頻出。\n\n" +
+    "■A: Retryは再試行のみで補償処理ではない。\n\n" +
+    "■C: Lambda内try-catchだけではワークフロー全体の補償ができない。\n\n" +
+    "■D: CloudWatchアラームで手動補償は非効率。"
+},
+
+{
+  id:266, category:"EventBridge",
+  question:"EventBridgeで特定イベントを複数ターゲットに配信したい。最適な構成はどれか？",
+  options:[
+    "A. 複数ターゲットを持つEventBridgeルールを作成する",
+    "B. SNSに送信してサブスクライバー側で分岐する",
+    "C. Lambdaで分岐処理を実装する",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールは複数ターゲットを持てるため、同じイベントを複数サービスに直接配信できる。\n\n" +
+    "■B: SNS経由は冗長。\n\n" +
+    "■C: Lambdaで分岐は過剰設計。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:267, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（logs/）にのみ書き込みできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:PutObject を arn:aws:s3:::my-bucket/logs/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:PutObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: logs/ 以下への書き込みのみ許可する最小権限の原則に沿う。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはアンチパターン。"
+},
+
+{
+  id:268, category:"CloudWatch",
+  question:"Lambda関数のエラー率が急増している。まず確認すべきメトリクスはどれか？",
+  options:[
+    "A. Errors",
+    "B. Duration",
+    "C. Throttles",
+    "D. IteratorAge"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Errors は失敗回数を示す最重要メトリクス。\n\n" +
+    "■B: Duration は処理時間であり、エラー率とは別。\n\n" +
+    "■C: Throttles は同時実行数制限の話。\n\n" +
+    "■D: IteratorAge はストリーム遅延の話。"
+},
+
+{
+  id:269, category:"CI/CD",
+  question:"SAMを使ったサーバレスアプリケーションを複数環境（dev/stg/prod）にデプロイしたい。最適な方法はどれか？",
+  options:[
+    "A. 環境ごとに別のスタック名・パラメータで sam deploy を実行する",
+    "B. すべて同じスタック名で上書きデプロイする",
+    "C. Lambdaコンソールで手動デプロイする",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SAMはCloudFormationスタックとしてデプロイされるため、環境ごとにスタック名やパラメータを変えるのが正しい運用。\n\n" +
+    "■B: 同じスタック名では環境が分離できない。\n\n" +
+    "■C: 手動デプロイはCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけではスタック更新が行われない。"
+},
+
+{
+  id:270, category:"X-Ray",
+  question:"X-RayでLambda内の特定処理ブロック（DBアクセスなど）を詳細に可視化したい。最適な方法はどれか？",
+  options:[
+    "A. X-Ray SDKでサブセグメントを作成する",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与するだけにする",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: サブセグメントを作成することで特定処理のレイテンシを詳細に可視化できる。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけではサブセグメントは作られない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:271, category:"Lambda",
+  question:"Lambda関数が大量のリクエストを処理しており、バックエンドAPIが過負荷になっている。最適な対策はどれか？",
+  options:[
+    "A. Lambdaの最大同時実行数を制限する",
+    "B. Lambdaのタイムアウトを延長する",
+    "C. メモリを減らす",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: reserved concurrency で同時実行数を制限すれば、バックエンドの許容量に合わせてスループットを制御できる。\n\n" +
+    "■B: タイムアウト延長は過負荷の根本解決にならない。\n\n" +
+    "■C: メモリ減少はCPU性能低下につながり逆効果。\n\n" +
+    "■D: Logs無効化は監視能力低下であり関係ない。"
+},
+
+{
+  id:272, category:"API Gateway",
+  question:"API Gatewayで特定クライアントにだけアクセスを許可したい（APIキーによる制御）。最適な方法はどれか？",
+  options:[
+    "A. APIキーを発行し使用量プランに紐付ける",
+    "B. WAFでIPアドレスを許可する",
+    "C. LambdaオーソライザーでIPチェックを行う",
+    "D. CloudFrontでオリジンアクセス制御を設定する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: APIキー＋使用量プランはクライアント識別の標準機能。\n\n" +
+    "■B: IPベースの制御でありAPIキー要件とは異なる。\n\n" +
+    "■C: LambdaオーソライザーでIPチェックは可能だが過剰設計。\n\n" +
+    "■D: CloudFront OACはS3オリジン制御の話。"
+},
+
+{
+  id:273, category:"DynamoDB",
+  question:"DynamoDBで読み取り頻度が高く、更新が少ないデータを高速に取得したい。最適な構成はどれか？",
+  options:[
+    "A. DAXを導入する",
+    "B. RCUを減らす",
+    "C. テーブルを分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: DAXはインメモリキャッシュで読み取り中心のワークロードに最適。\n\n" +
+    "■B: RCU減少はスロットリング増加につながる。\n\n" +
+    "■C: テーブル分割は複雑化するだけでレイテンシ改善には直結しない。\n\n" +
+    "■D: TTLは期限削除の話であり読み取りレイテンシとは無関係。"
+},
+
+{
+  id:274, category:"SQS",
+  question:"SQS FIFOキューで特定ユーザーのイベントを順序通りに処理したい。最適なメッセージグループID設計はどれか？",
+  options:[
+    "A. ユーザーIDをメッセージグループIDにする",
+    "B. ランダムUUIDを設定する",
+    "C. 固定値を設定する",
+    "D. メッセージグループIDを空にする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ユーザー単位で順序保証される。\n\n" +
+    "■B: ランダムUUIDでは順序保証が失われる。\n\n" +
+    "■C: 固定値は全メッセージが同一グループになりスループットが極端に低下。\n\n" +
+    "■D: FIFOではグループIDは必須。"
+},
+
+{
+  id:275, category:"Step Functions",
+  question:"Step Functionsで複数の独立した処理フローを同時に実行したい。最適なステートはどれか？",
+  options:[
+    "A. Parallelステート",
+    "B. Mapステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Parallelは複数ブランチを並列実行できる。\n\n" +
+    "■B: Mapは配列要素の繰り返し処理。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:276, category:"EventBridge",
+  question:"EventBridgeでイベントを別アカウントに転送したい。最適な方法はどれか？",
+  options:[
+    "A. イベントバスのルーティング",
+    "B. SNSサブスクリプション",
+    "C. SQSキュー共有",
+    "D. Lambdaで転送処理を実装する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはイベントバス間ルーティングをネイティブにサポート。\n\n" +
+    "■B: SNSでも可能だが冗長。\n\n" +
+    "■C: SQS共有は用途が異なる。\n\n" +
+    "■D: Lambdaで転送は過剰設計。"
+},
+
+{
+  id:277, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: images/ 以下のみ読み取り可能にできる最小権限の原則。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはアンチパターン。"
+},
+
+{
+  id:278, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: メモリ設定に応じてCPU性能も増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:279, category:"CI/CD",
+  question:"CodePipelineで複数環境にデプロイする際、環境ごとに異なる設定値を渡したい。最適な方法はどれか？",
+  options:[
+    "A. SSM Parameter Store を利用する",
+    "B. すべて同じ設定値を使う",
+    "C. Lambdaコンソールで手動設定する",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SSM Parameter Store は環境ごとに異なる設定値を安全に管理できる。\n\n" +
+    "■B: 同じ設定値では環境が分離できない。\n\n" +
+    "■C: 手動設定はCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけでは設定値の切り替えができない。"
+},
+
+{
+  id:280, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: HTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:281, category:"Lambda",
+  question:"Lambda関数が外部APIを呼び出しており、時々タイムアウトする。最も適切な改善策はどれか？",
+  options:[
+    "A. 外部API呼び出しのタイムアウト・リトライ・バックオフ設定を見直す",
+    "B. Lambdaのタイムアウトを最大まで延長する",
+    "C. IAMロールの権限を増やす",
+    "D. メモリを減らす"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 外部APIのレイテンシはアプリ側で制御するのが基本。タイムアウト・リトライ・バックオフ戦略を見直すことで安定性が向上する。\n\n" +
+    "■B: タイムアウト延長は応急処置であり根本解決ではない。\n\n" +
+    "■C: IAM権限はレイテンシとは無関係。\n\n" +
+    "■D: メモリ減少はCPU性能低下につながり逆効果。"
+},
+
+{
+  id:282, category:"API Gateway",
+  question:"API Gatewayでバックエンドレスポンスを加工して返したい。最適な機能はどれか？",
+  options:[
+    "A. マッピングテンプレート",
+    "B. ステージ変数",
+    "C. 使用量プラン",
+    "D. APIキー"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: マッピングテンプレートはレスポンスJSONを加工できる。フィールド追加・削除・変換が可能。\n\n" +
+    "■B: ステージ変数は環境ごとの設定値であり、ペイロード加工には使わない。\n\n" +
+    "■C: 使用量プランはレート制限の話。\n\n" +
+    "■D: APIキーは認証の話。"
+},
+
+{
+  id:283, category:"DynamoDB",
+  question:"DynamoDBでユーザーごとの最新イベントを高速に取得したい。最適なキー設計はどれか？",
+  options:[
+    "A. PKにユーザーID、SKにイベント時刻を設定する",
+    "B. PKにイベント時刻、SKにユーザーIDを設定する",
+    "C. PKにランダムUUIDを設定する",
+    "D. PKに固定値を設定しSKにユーザーIDを設定する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ユーザー単位の時系列データ取得に最適。最新イベントはSK降順で1件取得するだけ。\n\n" +
+    "■B: PKが時刻だとユーザー単位の取得が困難。\n\n" +
+    "■C: ランダムUUIDはグルーピングできずスキャンが必要。\n\n" +
+    "■D: PK固定値はホットパーティションになる。"
+},
+
+{
+  id:284, category:"SQS",
+  question:"SQS標準キューで重複メッセージが届く。ビジネスロジック上、重複処理は許容できない。最適な対策はどれか？",
+  options:[
+    "A. コンシューマ側で冪等性を確保する",
+    "B. FIFOキューに変更する",
+    "C. Delay Secondsを増やす",
+    "D. Visibility Timeoutを短くする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: 標準キューは重複配信が仕様。コンシューマ側で重複検知・冪等性を確保するのが必須。\n\n" +
+    "■B: FIFOに変更すると制約が増えるため、まず冪等性を確保するのが一般的。\n\n" +
+    "■C: Delay Secondsは重複とは無関係。\n\n" +
+    "■D: Visibility Timeout短縮は再配信が増え逆効果。"
+},
+
+{
+  id:285, category:"Step Functions",
+  question:"Step Functionsで配列要素ごとに処理を行いたい。最適なステートはどれか？",
+  options:[
+    "A. Mapステート",
+    "B. Parallelステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Mapは配列要素ごとの繰り返し処理に最適。並列化も可能。\n\n" +
+    "■B: Parallelは異なる処理フローの並列実行。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:286, category:"EventBridge",
+  question:"EventBridgeで特定イベントをフィルタしてターゲットに送信したい。最適な方法はどれか？",
+  options:[
+    "A. イベントパターンを指定したルールを作成する",
+    "B. すべてのイベントをLambdaで受けてフィルタする",
+    "C. SNSに送信してサブスクライバー側でフィルタする",
+    "D. CloudWatch Logsに書き込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeルールのイベントパターンでフィルタするのが最も効率的で疎結合。\n\n" +
+    "■B: Lambdaでフィルタすると不要なイベントまでLambdaが起動しコスト増。\n\n" +
+    "■C: SNS側フィルタは冗長。\n\n" +
+    "■D: Logsはイベント配信には使えない。"
+},
+
+{
+  id:287, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（logs/）にのみ書き込みできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:PutObject を arn:aws:s3:::my-bucket/logs/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:PutObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: logs/ 以下への書き込みのみ許可する最小権限の原則。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはアンチパターン。"
+},
+
+{
+  id:288, category:"CloudWatch",
+  question:"Lambda関数のエラー率が急増している。まず確認すべきメトリクスはどれか？",
+  options:[
+    "A. Errors",
+    "B. Duration",
+    "C. Throttles",
+    "D. IteratorAge"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Errors は失敗回数を示す最重要メトリクス。\n\n" +
+    "■B: Duration は処理時間であり、エラー率とは別。\n\n" +
+    "■C: Throttles は同時実行数制限の話。\n\n" +
+    "■D: IteratorAge はストリーム遅延の話。"
+},
+
+{
+  id:289, category:"CI/CD",
+  question:"CodePipelineでソース変更時に自動的にLambdaを更新したい。最適な構成はどれか？",
+  options:[
+    "A. ソース→CodeBuild→CodeDeploy のパイプラインを構成する",
+    "B. ソースステージのみを設定する",
+    "C. CodeBuildのみを使う",
+    "D. CloudFormationのみを使う"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: CodePipelineが全体をオーケストレーションし、ビルドはCodeBuild、デプロイはCodeDeployが担当する。\n\n" +
+    "■B: ソースステージだけでは更新されない。\n\n" +
+    "■C: CodeBuildのみではデプロイできない。\n\n" +
+    "■D: CloudFormation単体ではソース変更検知ができない。"
+},
+
+{
+  id:290, category:"X-Ray",
+  question:"X-Rayで外部HTTP呼び出しがトレースに含まれていない。外部呼び出しも可視化したい場合、必要な対応はどれか？",
+  options:[
+    "A. X-Ray SDKでHTTPクライアントをインストルメントする",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与する",
+    "D. VPCのCIDRを広げる"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: HTTPクライアントをラップすることで外部呼び出しがサブセグメントとして記録される。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけでは外部呼び出しは記録されない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
+},
+
+{
+  id:291, category:"Lambda",
+  question:"Lambda関数が大量のリクエストを処理しており、バックエンドAPIが過負荷になっている。最適な対策はどれか？",
+  options:[
+    "A. Lambdaの最大同時実行数を制限する",
+    "B. Lambdaのタイムアウトを延長する",
+    "C. メモリを減らす",
+    "D. CloudWatch Logsを無効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: reserved concurrency で同時実行数を制限すれば、バックエンドの許容量に合わせてスループットを制御できる。\n\n" +
+    "■B: タイムアウト延長は過負荷の根本解決にならない。\n\n" +
+    "■C: メモリ減少はCPU性能低下につながり逆効果。\n\n" +
+    "■D: Logs無効化は監視能力低下であり関係ない。"
+},
+
+{
+  id:292, category:"API Gateway",
+  question:"API Gatewayで特定クライアントにだけアクセスを許可したい（APIキーによる制御）。最適な方法はどれか？",
+  options:[
+    "A. APIキーを発行し使用量プランに紐付ける",
+    "B. WAFでIPアドレスを許可する",
+    "C. LambdaオーソライザーでIPチェックを行う",
+    "D. CloudFrontでオリジンアクセス制御を設定する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: APIキー＋使用量プランはクライアント識別の標準機能。\n\n" +
+    "■B: IPベースの制御でありAPIキー要件とは異なる。\n\n" +
+    "■C: LambdaオーソライザーでIPチェックは可能だが過剰設計。\n\n" +
+    "■D: CloudFront OACはS3オリジン制御の話。"
+},
+
+{
+  id:293, category:"DynamoDB",
+  question:"DynamoDBで読み取り頻度が高く、更新が少ないデータを高速に取得したい。最適な構成はどれか？",
+  options:[
+    "A. DAXを導入する",
+    "B. RCUを減らす",
+    "C. テーブルを分割する",
+    "D. TTLを有効化する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: DAXはインメモリキャッシュで読み取り中心のワークロードに最適。\n\n" +
+    "■B: RCU減少はスロットリング増加につながる。\n\n" +
+    "■C: テーブル分割は複雑化するだけでレイテンシ改善には直結しない。\n\n" +
+    "■D: TTLは期限削除の話であり読み取りレイテンシとは無関係。"
+},
+
+{
+  id:294, category:"SQS",
+  question:"SQS FIFOキューで特定ユーザーのイベントを順序通りに処理したい。最適なメッセージグループID設計はどれか？",
+  options:[
+    "A. ユーザーIDをメッセージグループIDにする",
+    "B. ランダムUUIDを設定する",
+    "C. 固定値を設定する",
+    "D. メッセージグループIDを空にする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: ユーザー単位で順序保証される。\n\n" +
+    "■B: ランダムUUIDでは順序保証が失われる。\n\n" +
+    "■C: 固定値は全メッセージが同一グループになりスループットが極端に低下。\n\n" +
+    "■D: FIFOではグループIDは必須。"
+},
+
+{
+  id:295, category:"Step Functions",
+  question:"Step Functionsで複数の独立した処理フローを同時に実行したい。最適なステートはどれか？",
+  options:[
+    "A. Parallelステート",
+    "B. Mapステート",
+    "C. Choiceステート",
+    "D. Taskステート"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: Parallelは複数ブランチを並列実行できる。\n\n" +
+    "■B: Mapは配列要素の繰り返し処理。\n\n" +
+    "■C: Choiceは条件分岐。\n\n" +
+    "■D: Taskは単一処理。"
+},
+
+{
+  id:296, category:"EventBridge",
+  question:"EventBridgeでイベントを別アカウントに転送したい。最適な方法はどれか？",
+  options:[
+    "A. イベントバスのルーティング",
+    "B. SNSサブスクリプション",
+    "C. SQSキュー共有",
+    "D. Lambdaで転送処理を実装する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: EventBridgeはイベントバス間ルーティングをネイティブにサポート。\n\n" +
+    "■B: SNSでも可能だが冗長。\n\n" +
+    "■C: SQS共有は用途が異なる。\n\n" +
+    "■D: Lambdaで転送は過剰設計。"
+},
+
+{
+  id:297, category:"IAM",
+  question:"Lambda関数がS3バケットの特定フォルダ（images/）にのみ読み取りできるようにしたい。最適なIAMポリシーはどれか？",
+  options:[
+    "A. s3:GetObject を arn:aws:s3:::my-bucket/images/* に対してのみ許可する",
+    "B. s3:* をバケット全体に許可する",
+    "C. s3:GetObject をすべてのバケットに許可する",
+    "D. アクセスキーをコードに埋め込む"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: images/ 以下のみ読み取り可能にできる最小権限の原則。\n\n" +
+    "■B: バケット全体へのフル権限は危険。\n\n" +
+    "■C: 全バケットへの許可は過剰権限。\n\n" +
+    "■D: アクセスキー埋め込みはアンチパターン。"
+},
+
+{
+  id:298, category:"CloudWatch",
+  question:"Lambda関数のDurationが急増している。まず確認すべきポイントはどれか？",
+  options:[
+    "A. メモリ設定とCPU性能の関係",
+    "B. IAMロールのポリシーサイズ",
+    "C. VPCのCIDRブロック",
+    "D. CloudWatch Logsの保持期間"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: メモリ設定に応じてCPU性能も増減するため、Duration増加時はまずメモリ設定を見直すべき。\n\n" +
+    "■B: IAMポリシーサイズは処理時間とは無関係。\n\n" +
+    "■C: VPC CIDRはネットワーク設計の話。\n\n" +
+    "■D: Logs保持期間は処理時間とは無関係。"
+},
+
+{
+  id:299, category:"CI/CD",
+  question:"SAMを使ったサーバレスアプリケーションを複数環境（dev/stg/prod）にデプロイしたい。最適な方法はどれか？",
+  options:[
+    "A. 環境ごとに別のスタック名・パラメータで sam deploy を実行する",
+    "B. すべて同じスタック名で上書きデプロイする",
+    "C. Lambdaコンソールで手動デプロイする",
+    "D. S3にZIPをアップロードするだけにする"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: SAMはCloudFormationスタックとしてデプロイされるため、環境ごとにスタック名やパラメータを変えるのが正しい運用。\n\n" +
+    "■B: 同じスタック名では環境が分離できない。\n\n" +
+    "■C: 手動デプロイはCI/CDではない。\n\n" +
+    "■D: ZIPアップロードだけではスタック更新が行われない。"
+},
+
+{
+  id:300, category:"X-Ray",
+  question:"X-RayでLambda内の特定処理ブロック（DBアクセスなど）を詳細に可視化したい。最適な方法はどれか？",
+  options:[
+    "A. X-Ray SDKでサブセグメントを作成する",
+    "B. CloudWatch Logsの保持期間を延長する",
+    "C. IAMロールに xray:* を付与するだけにする",
+    "D. VPCのCIDRを変更する"
+  ],
+  answer:0,
+  explanation:
+    "正解はA。\n\n" +
+    "■A: サブセグメントを作成することで特定処理のレイテンシを詳細に可視化できる。\n\n" +
+    "■B: Logs保持期間はトレース内容とは無関係。\n\n" +
+    "■C: 権限だけではサブセグメントは作られない。\n\n" +
+    "■D: VPC CIDRはトレースとは無関係。"
 }
-
-
-
 
 ];
