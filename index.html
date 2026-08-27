@@ -26,6 +26,10 @@
     .stat-num { font-size:18px; font-weight:bold; color:#ea580c; }
     table { width:100%; border-collapse:collapse; margin-top:10px; }
     th, td { padding:6px; border-bottom:1px solid #e2e8f0; text-align:left; }
+    .exam-results { overflow-x:auto; }
+    .exam-results table { min-width:560px; }
+    .exam-result-correct { color:#16a34a; font-weight:bold; }
+    .exam-result-wrong { color:#dc2626; font-weight:bold; }
   </style>
 </head>
 
@@ -97,6 +101,21 @@
   <div id="exam-result" class="card hidden">
     <h2>模擬試験結果</h2>
     <p id="exam-score" style="font-size:20px; font-weight:bold; margin:12px 0;"></p>
+    <div class="exam-results">
+      <table>
+        <thead>
+          <tr>
+            <th>問</th>
+            <th>分野</th>
+            <th>問題</th>
+            <th>あなたの回答</th>
+            <th>正解</th>
+            <th>結果</th>
+          </tr>
+        </thead>
+        <tbody id="exam-result-table"></tbody>
+      </table>
+    </div>
     <button class="next-btn" onclick="switchTab('quiz')">通常モードに戻る</button>
   </div>
 </div>
@@ -214,14 +233,25 @@
 
   /* ▼▼▼ 模擬試験モード ▼▼▼ */
 
+  const examQuestionCount = 65;
   let examList = [];
   let examIndex = 0;
   let examCorrect = 0;
+  let examResults = [];
+
+  function shuffle(list) {
+    return [...list].sort(() => Math.random() - 0.5);
+  }
 
   function startExam() {
-    examList = [...questions].sort(() => Math.random() - 0.5).slice(0, 65);
+    examList = [];
+    while (examList.length < examQuestionCount) {
+      examList.push(...shuffle(questions));
+    }
+    examList = examList.slice(0, examQuestionCount);
     examIndex = 0;
     examCorrect = 0;
+    examResults = [];
 
     document.getElementById('exam-container').classList.remove('hidden');
     document.getElementById('exam-result').classList.add('hidden');
@@ -233,7 +263,7 @@
     const q = examList[examIndex];
 
     document.getElementById('exam-category').innerText = q.category;
-    document.getElementById('exam-text').innerText = `問${q.id}. ${q.question}`;
+  document.getElementById('exam-text').innerText = `問${examIndex + 1}. ${q.question}`;
 
     const optDiv = document.getElementById('exam-options');
     optDiv.innerHTML = '';
@@ -251,6 +281,14 @@
   function selectExamOption(idx, q) {
     const isCorrect = (idx === q.answer);
     if (isCorrect) examCorrect++;
+    examResults.push({
+      questionNumber: examIndex + 1,
+      question: q.question,
+      category: q.category,
+      selected: q.options[idx],
+      answer: q.options[q.answer],
+      isCorrect
+    });
 
     const btns = document.querySelectorAll('#exam-options .opt-btn');
     btns.forEach((btn, i) => {
@@ -281,6 +319,30 @@
     const score = Math.round((examCorrect / examList.length) * 100);
     document.getElementById('exam-score').innerText =
       `正答率: ${score}%（${examCorrect} / ${examList.length}）`;
+
+    const tbody = document.getElementById('exam-result-table');
+    tbody.innerHTML = '';
+    examResults.forEach(result => {
+      const tr = document.createElement('tr');
+      const values = [
+        result.questionNumber,
+        result.category,
+        result.question,
+        result.selected,
+        result.answer,
+        result.isCorrect ? '正解' : '不正解'
+      ];
+
+      values.forEach((value, index) => {
+        const td = document.createElement('td');
+        td.innerText = value;
+        if (index === values.length - 1) {
+          td.className = result.isCorrect ? 'exam-result-correct' : 'exam-result-wrong';
+        }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
   }
 
   /* ▼▼▼ 分野別正答率 ▼▼▼ */
@@ -328,6 +390,13 @@
 
     updateCategoryStats();
   }
+
+  Object.assign(window, {
+    switchTab,
+    nextQuestion,
+    startExam,
+    nextExamQuestion
+  });
 
   renderQuestion();
 </script>
